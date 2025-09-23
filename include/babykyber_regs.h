@@ -1,47 +1,39 @@
 #ifndef BABYKYBER_REGS_H
 #define BABYKYBER_REGS_H
 
-#include <stdint.h>
+// Base address for BabyKyber registers
+#define BABYKYBER_BASE 0x40007000
 
-// ================= Base Address =================
-#define BABYKYBER_BASE_ADDR   0x40007000UL
+// Key Generation Input Registers (A matrix: 4x4 = 16 words)
+#define BABYKYBER_A_ADDR (BABYKYBER_BASE + 0x000)  // 16 writes
 
-// ================= A_t Matrix (4x4) =================
-#define BABYKYBER_A_T_BASE    (BABYKYBER_BASE_ADDR + 0x0000)
+// Secret key s (2x4 = 8 words)
+#define BABYKYBER_S_ADDR (BABYKYBER_BASE + 0x040)  // 8 writes
 
-// ================= s Vector (2x4 = 8 values) =================
-#define BABYKYBER_S_BASE      (BABYKYBER_BASE_ADDR + 0x0064)
+// Error e (2x4 = 8 words)
+#define BABYKYBER_E_ADDR (BABYKYBER_BASE + 0x060)  // 8 writes
 
-// ================= e Vector (2x4 = 8 values) =================
-#define BABYKYBER_E_BASE      (BABYKYBER_BASE_ADDR + 0x0096)
+// Encryption Inputs
+#define BABYKYBER_MESSAGE_ADDR (BABYKYBER_BASE + 0x080)  // 1 write
+#define BABYKYBER_R_ADDR (BABYKYBER_BASE + 0x084)  // 8 writes
+#define BABYKYBER_E1_ADDR (BABYKYBER_BASE + 0x0A4)  // 8 writes
+#define BABYKYBER_E2_ADDR (BABYKYBER_BASE + 0x0C4)  // 4 writes
 
-// ================= Message =================
-#define BABYKYBER_MESSAGE     (BABYKYBER_BASE_ADDR + 0x0128)
+// Triggers
+#define BABYKYBER_KEYGEN_TRIGGER_ADDR (BABYKYBER_BASE + 0x164)  // 1 write
+#define BABYKYBER_ENCRYPT_TRIGGER_ADDR (BABYKYBER_BASE + 0x168)  // 1 write
+#define BABYKYBER_DECRYPT_TRIGGER_ADDR (BABYKYBER_BASE + 0x16C)  // 1 write
 
-// ================= Public Key (2x4x3 = 24 values) =================
-#define BABYKYBER_PK_BASE     (BABYKYBER_BASE_ADDR + 0x0132)
+// Outputs (Read-only) -- addresses moved after input region to avoid overlap
+#define BABYKYBER_PUBLIC_KEY_ADDR      (BABYKYBER_BASE + 0x200)  // 32 reads (2x4x4)
+#define BABYKYBER_CIPHERTEXT_ADDR      (BABYKYBER_BASE + 0x280)  // 16 reads (2x2x4)
+#define BABYKYBER_DECRYPTED_MESSAGE_ADDR (BABYKYBER_BASE + 0x2C0)  // 1 read
+#define BABYKYBER_DECRYPTED_VALUE_ADDR   (BABYKYBER_BASE + 0x2C4)  // 1 read
+#define BABYKYBER_DECRYPTED_MB_ADDR      (BABYKYBER_BASE + 0x2C8)  // 1 read
 
-// ================= Result (optional) =================
-#define BABYKYBER_RESULT      (BABYKYBER_BASE_ADDR + 0x0144)
-
-// ================= r Vector (2x4 = 8 values) =================
-#define BABYKYBER_R_BASE      (BABYKYBER_BASE_ADDR + 0x0228)
-
-// ================= e1 Vector (2x4 = 8 values) =================
-#define BABYKYBER_E1_BASE     (BABYKYBER_BASE_ADDR + 0x0260)
-
-// ================= e2 Vector (4 values) =================
-#define BABYKYBER_E2_BASE     (BABYKYBER_BASE_ADDR + 0x0292)
-
-// ================= Ciphertext (12 values) =================
-#define BABYKYBER_CT_BASE     (BABYKYBER_BASE_ADDR + 0x0308)
-
-// ================= Control Registers =================
-#define BABYKYBER_KEYGEN_TRIGGER   (BABYKYBER_BASE_ADDR + 0x0356)
-#define BABYKYBER_ENCRYPT_TRIGGER  (BABYKYBER_BASE_ADDR + 0x0360)
-#define BABYKYBER_DECRYPT_TRIGGER  (BABYKYBER_BASE_ADDR + 0x0364)
-
-// ================= HAL Access Macros =================
-#define REG32(addr)           (*(volatile uint32_t *)(addr))
+// Status registers
+#define BABYKYBER_KEY_DONE_ADDR (BABYKYBER_BASE + 0x300)  // 1 read
+#define BABYKYBER_ENCRYPT_DONE_ADDR (BABYKYBER_BASE + 0x304)  // 1 read
+#define BABYKYBER_DECRYPT_DONE_ADDR (BABYKYBER_BASE + 0x308)  // 1 read
 
 #endif // BABYKYBER_REGS_H
