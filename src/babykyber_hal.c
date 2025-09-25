@@ -72,21 +72,34 @@ void hal_send_e2(uint32_t e2[4]) {
     }
 }
 
+// Read ciphertext (2x2x4 = 16 words)
+void hal_read_ciphertext(uint32_t ciphertext[2][2][4]) {
+    volatile uint32_t *ptr;
+    for (int k = 0; k < 2; k++) {
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 4; j++) {
+                ptr = (volatile uint32_t *)(BABYKYBER_CIPHERTEXT_ADDR + (k*8 + i*4 + j) * 4);
+                ciphertext[k][i][j] = *ptr;
+            }
+        }
+    }
+}
+
 // Trigger key generation
-void hal_trigger_keygen() {
-    volatile uint32_t *ptr = (volatile uint32_t *)BABYKYBER_KEYGEN_TRIGGER_ADDR;
+void hal_trigger_keygen(uint32_t trigger_addr) {
+    volatile uint32_t *ptr = (volatile uint32_t *)trigger_addr;
     *ptr = 1;
 }
 
 // Trigger encryption
-void hal_trigger_encrypt() {
-    volatile uint32_t *ptr = (volatile uint32_t *)BABYKYBER_ENCRYPT_TRIGGER_ADDR;
+void hal_trigger_encrypt(uint32_t trigger_addr) {
+    volatile uint32_t *ptr = (volatile uint32_t *)trigger_addr;
     *ptr = 1;
 }
 
 // Trigger decryption
-void hal_trigger_decrypt() {
-    volatile uint32_t *ptr = (volatile uint32_t *)BABYKYBER_DECRYPT_TRIGGER_ADDR;
+void hal_trigger_decrypt(uint32_t trigger_addr) {
+    volatile uint32_t *ptr = (volatile uint32_t *)trigger_addr;
     *ptr = 1;
 }
 
@@ -103,15 +116,13 @@ void hal_read_public_key(uint32_t public_key[2][4][4]) {
     }
 }
 
-// Read ciphertext (2x2x4 = 16 words)
-void hal_read_ciphertext(uint32_t ciphertext[2][2][4]) {
+// Read secret key (2x4 = 8 words)
+void hal_read_secret_key(uint32_t secret_key[2][4]) {
     volatile uint32_t *ptr;
-    for (int k = 0; k < 2; k++) {
-        for (int i = 0; i < 2; i++) {
-            for (int j = 0; j < 4; j++) {
-                ptr = (volatile uint32_t *)(BABYKYBER_CIPHERTEXT_ADDR + (k*8 + i*4 + j) * 4);
-                ciphertext[k][i][j] = *ptr;
-            }
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 4; j++) {
+            ptr = (volatile uint32_t *)(BABYKYBER_SECRET_KEY_ADDR + (i*4 + j) * 4);
+            secret_key[i][j] = *ptr;
         }
     }
 }
@@ -134,20 +145,20 @@ uint32_t hal_read_decrypted_mb() {
     return *ptr;
 }
 
-// Check if key generation is done
-int hal_is_key_done() {
-    volatile uint32_t *ptr = (volatile uint32_t *)BABYKYBER_KEY_DONE_ADDR;
-    return *ptr;
-}
+// Check if key generation is done (commented out for now)
+// int hal_is_key_done() {
+//     volatile uint32_t *ptr = (volatile uint32_t *)BABYKYBER_KEY_DONE_ADDR;
+//     return *ptr;
+// }
 
-// Check if encryption is done
-int hal_is_encrypt_done() {
-    volatile uint32_t *ptr = (volatile uint32_t *)BABYKYBER_ENCRYPT_DONE_ADDR;
-    return *ptr;
-}
+// Check if encryption is done (commented out for now)
+// int hal_is_encrypt_done() {
+//     volatile uint32_t *ptr = (volatile uint32_t *)BABYKYBER_ENCRYPT_DONE_ADDR;
+//     return *ptr;
+// }
 
-// Check if decryption is done
-int hal_is_decrypt_done() {
-    volatile uint32_t *ptr = (volatile uint32_t *)BABYKYBER_DECRYPT_DONE_ADDR;
-    return *ptr;
-}
+// Check if decryption is done (commented out for now)
+// int hal_is_decrypt_done() {
+//     volatile uint32_t *ptr = (volatile uint32_t *)BABYKYBER_DECRYPT_DONE_ADDR;
+//     return *ptr;
+// }

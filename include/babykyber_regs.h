@@ -26,14 +26,15 @@
 
 // Outputs (Read-only) -- addresses moved after input region to avoid overlap
 #define BABYKYBER_PUBLIC_KEY_ADDR      (BABYKYBER_BASE + 0x200)  // 32 reads (2x4x4)
+#define BABYKYBER_SECRET_KEY_ADDR      (BABYKYBER_BASE + 0x2CC)  // 8 reads (2x4)
 #define BABYKYBER_CIPHERTEXT_ADDR      (BABYKYBER_BASE + 0x280)  // 16 reads (2x2x4)
 #define BABYKYBER_DECRYPTED_MESSAGE_ADDR (BABYKYBER_BASE + 0x2C0)  // 1 read
 #define BABYKYBER_DECRYPTED_VALUE_ADDR   (BABYKYBER_BASE + 0x2C4)  // 1 read
 #define BABYKYBER_DECRYPTED_MB_ADDR      (BABYKYBER_BASE + 0x2C8)  // 1 read
 
-// Status registers
-#define BABYKYBER_KEY_DONE_ADDR (BABYKYBER_BASE + 0x300)  // 1 read
-#define BABYKYBER_ENCRYPT_DONE_ADDR (BABYKYBER_BASE + 0x304)  // 1 read
-#define BABYKYBER_DECRYPT_DONE_ADDR (BABYKYBER_BASE + 0x308)  // 1 read
+// Status registers (commented out for now)
+// #define BABYKYBER_KEY_DONE_ADDR (BABYKYBER_BASE + 0x300)  // 1 read
+// #define BABYKYBER_ENCRYPT_DONE_ADDR (BABYKYBER_BASE + 0x304)  // 1 read
+// #define BABYKYBER_DECRYPT_DONE_ADDR (BABYKYBER_BASE + 0x308)  // 1 read
 
 #endif // BABYKYBER_REGS_H

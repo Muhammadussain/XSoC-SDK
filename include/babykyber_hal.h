@@ -27,16 +27,19 @@ void hal_send_e1(uint32_t e1[2][4]);
 void hal_send_e2(uint32_t e2[4]);
 
 // Trigger key generation
-void hal_trigger_keygen();
+void hal_trigger_keygen(uint32_t trigger_addr);
 
 // Trigger encryption
-void hal_trigger_encrypt();
+void hal_trigger_encrypt(uint32_t trigger_addr);
 
 // Trigger decryption
-void hal_trigger_decrypt();
+void hal_trigger_decrypt(uint32_t trigger_addr);
 
 // Read public key (2x4x4 = 32 words)
 void hal_read_public_key(uint32_t public_key[2][4][4]);
+
+// Read secret key (2x4 = 8 words)
+void hal_read_secret_key(uint32_t secret_key[2][4]);
 
 // Read ciphertext (2x2x4 = 16 words)
 void hal_read_ciphertext(uint32_t ciphertext[2][2][4]);
@@ -50,13 +53,13 @@ uint32_t hal_read_decrypted_value();
 // Read decrypted m_b
 uint32_t hal_read_decrypted_mb();
 
-// Check if key generation is done
-int hal_is_key_done();
+// Check if key generation is done (commented out for now)
+// int hal_is_key_done();
 
-// Check if encryption is done
-int hal_is_encrypt_done();
+// Check if encryption is done (commented out for now)
+// int hal_is_encrypt_done();
 
-// Check if decryption is done
-int hal_is_decrypt_done();
+// Check if decryption is done (commented out for now)
+// int hal_is_decrypt_done();
 
 #endif // BABYKYBER_HAL_H
