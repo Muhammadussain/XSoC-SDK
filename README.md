@@ -108,6 +108,4 @@ To clean the build outputs:
 make clean
 ```
 
-## License
 
-[Add your license here]
