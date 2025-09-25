@@ -27,9 +27,11 @@ uint32_t e1[2][4] = {
     {16,0,1,16}
 };
 uint32_t e2[4] = {0,16,1,0};
-uint32_t message = 11; // expected_message in tb
+volatile uint32_t message; // Global declaration without initializer
 
 int main() {
+    message = 11; // Initialize in main
+
     // Initialize
     babykyber_init();
 

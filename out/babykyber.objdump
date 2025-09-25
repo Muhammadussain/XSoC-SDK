@@ -9,696 +9,699 @@ Disassembly of section .text:
    100b8:	0e112e23          	sw	ra,252(sp)
    100bc:	0e812c23          	sw	s0,248(sp)
    100c0:	10010413          	addi	s0,sp,256
-   100c4:	080000ef          	jal	ra,10144 <babykyber_init>
-   100c8:	400077b7          	lui	a5,0x40007
-   100cc:	16478693          	addi	a3,a5,356 # 40007164 <__global_pointer$+0x3fff4e6c>
-   100d0:	86018613          	addi	a2,gp,-1952 # 11b58 <e>
-   100d4:	84018593          	addi	a1,gp,-1984 # 11b38 <s>
-   100d8:	00002517          	auipc	a0,0x2
-   100dc:	a2050513          	addi	a0,a0,-1504 # 11af8 <A>
-   100e0:	088000ef          	jal	ra,10168 <babykyber_keygen>
-   100e4:	8d018793          	addi	a5,gp,-1840 # 11bc8 <message>
-   100e8:	0007a503          	lw	a0,0(a5)
-   100ec:	400077b7          	lui	a5,0x40007
-   100f0:	16878713          	addi	a4,a5,360 # 40007168 <__global_pointer$+0x3fff4e70>
-   100f4:	8c018693          	addi	a3,gp,-1856 # 11bb8 <e2>
-   100f8:	8a018613          	addi	a2,gp,-1888 # 11b98 <e1>
-   100fc:	88018593          	addi	a1,gp,-1920 # 11b78 <r>
-   10100:	0bc000ef          	jal	ra,101bc <babykyber_encrypt>
-   10104:	f0440513          	addi	a0,s0,-252
-   10108:	f0840793          	addi	a5,s0,-248
-   1010c:	f0c40713          	addi	a4,s0,-244
-   10110:	f1040693          	addi	a3,s0,-240
-   10114:	f5040613          	addi	a2,s0,-176
-   10118:	f7040593          	addi	a1,s0,-144
-   1011c:	00050813          	addi	a6,a0,0
-   10120:	40007537          	lui	a0,0x40007
-   10124:	16c50513          	addi	a0,a0,364 # 4000716c <__global_pointer$+0x3fff4e74>
-   10128:	0f4000ef          	jal	ra,1021c <babykyber_decrypt>
-   1012c:	00000793          	addi	a5,zero,0
-   10130:	00078513          	addi	a0,a5,0
-   10134:	0fc12083          	lw	ra,252(sp)
-   10138:	0f812403          	lw	s0,248(sp)
-   1013c:	10010113          	addi	sp,sp,256
-   10140:	00008067          	jalr	zero,0(ra)
+   100c4:	8d018793          	addi	a5,gp,-1840 # 11bd4 <message>
+   100c8:	00b00713          	addi	a4,zero,11
+   100cc:	00e7a023          	sw	a4,0(a5)
+   100d0:	080000ef          	jal	ra,10150 <babykyber_init>
+   100d4:	400077b7          	lui	a5,0x40007
+   100d8:	16478693          	addi	a3,a5,356 # 40007164 <__global_pointer$+0x3fff4e60>
+   100dc:	86018613          	addi	a2,gp,-1952 # 11b64 <e>
+   100e0:	84018593          	addi	a1,gp,-1984 # 11b44 <s>
+   100e4:	00002517          	auipc	a0,0x2
+   100e8:	a2050513          	addi	a0,a0,-1504 # 11b04 <A>
+   100ec:	088000ef          	jal	ra,10174 <babykyber_keygen>
+   100f0:	8d018793          	addi	a5,gp,-1840 # 11bd4 <message>
+   100f4:	0007a503          	lw	a0,0(a5)
+   100f8:	400077b7          	lui	a5,0x40007
+   100fc:	16878713          	addi	a4,a5,360 # 40007168 <__global_pointer$+0x3fff4e64>
+   10100:	8c018693          	addi	a3,gp,-1856 # 11bc4 <e2>
+   10104:	8a018613          	addi	a2,gp,-1888 # 11ba4 <e1>
+   10108:	88018593          	addi	a1,gp,-1920 # 11b84 <r>
+   1010c:	0bc000ef          	jal	ra,101c8 <babykyber_encrypt>
+   10110:	f0440513          	addi	a0,s0,-252
+   10114:	f0840793          	addi	a5,s0,-248
+   10118:	f0c40713          	addi	a4,s0,-244
+   1011c:	f1040693          	addi	a3,s0,-240
+   10120:	f5040613          	addi	a2,s0,-176
+   10124:	f7040593          	addi	a1,s0,-144
+   10128:	00050813          	addi	a6,a0,0
+   1012c:	40007537          	lui	a0,0x40007
+   10130:	16c50513          	addi	a0,a0,364 # 4000716c <__global_pointer$+0x3fff4e68>
+   10134:	0f4000ef          	jal	ra,10228 <babykyber_decrypt>
+   10138:	00000793          	addi	a5,zero,0
+   1013c:	00078513          	addi	a0,a5,0
+   10140:	0fc12083          	lw	ra,252(sp)
+   10144:	0f812403          	lw	s0,248(sp)
+   10148:	10010113          	addi	sp,sp,256
+   1014c:	00008067          	jalr	zero,0(ra)
 
-00010144 <babykyber_init>:
-   10144:	ff010113          	addi	sp,sp,-16
-   10148:	00112623          	sw	ra,12(sp)
-   1014c:	00812423          	sw	s0,8(sp)
-   10150:	01010413          	addi	s0,sp,16
-   10154:	00000013          	addi	zero,zero,0
-   10158:	00c12083          	lw	ra,12(sp)
-   1015c:	00812403          	lw	s0,8(sp)
-   10160:	01010113          	addi	sp,sp,16
-   10164:	00008067          	jalr	zero,0(ra)
+00010150 <babykyber_init>:
+   10150:	ff010113          	addi	sp,sp,-16
+   10154:	00112623          	sw	ra,12(sp)
+   10158:	00812423          	sw	s0,8(sp)
+   1015c:	01010413          	addi	s0,sp,16
+   10160:	00000013          	addi	zero,zero,0
+   10164:	00c12083          	lw	ra,12(sp)
+   10168:	00812403          	lw	s0,8(sp)
+   1016c:	01010113          	addi	sp,sp,16
+   10170:	00008067          	jalr	zero,0(ra)
 
-00010168 <babykyber_keygen>:
-   10168:	fe010113          	addi	sp,sp,-32
-   1016c:	00112e23          	sw	ra,28(sp)
-   10170:	00812c23          	sw	s0,24(sp)
-   10174:	02010413          	addi	s0,sp,32
-   10178:	fea42623          	sw	a0,-20(s0)
-   1017c:	feb42423          	sw	a1,-24(s0)
-   10180:	fec42223          	sw	a2,-28(s0)
-   10184:	fed42023          	sw	a3,-32(s0)
-   10188:	fec42503          	lw	a0,-20(s0)
-   1018c:	120000ef          	jal	ra,102ac <hal_send_A>
-   10190:	fe842503          	lw	a0,-24(s0)
-   10194:	1d0000ef          	jal	ra,10364 <hal_send_s>
-   10198:	fe442503          	lw	a0,-28(s0)
-   1019c:	280000ef          	jal	ra,1041c <hal_send_e>
-   101a0:	fe042503          	lw	a0,-32(s0)
-   101a4:	650000ef          	jal	ra,107f4 <hal_trigger_keygen>
-   101a8:	00000013          	addi	zero,zero,0
-   101ac:	01c12083          	lw	ra,28(sp)
-   101b0:	01812403          	lw	s0,24(sp)
-   101b4:	02010113          	addi	sp,sp,32
-   101b8:	00008067          	jalr	zero,0(ra)
+00010174 <babykyber_keygen>:
+   10174:	fe010113          	addi	sp,sp,-32
+   10178:	00112e23          	sw	ra,28(sp)
+   1017c:	00812c23          	sw	s0,24(sp)
+   10180:	02010413          	addi	s0,sp,32
+   10184:	fea42623          	sw	a0,-20(s0)
+   10188:	feb42423          	sw	a1,-24(s0)
+   1018c:	fec42223          	sw	a2,-28(s0)
+   10190:	fed42023          	sw	a3,-32(s0)
+   10194:	fec42503          	lw	a0,-20(s0)
+   10198:	120000ef          	jal	ra,102b8 <hal_send_A>
+   1019c:	fe842503          	lw	a0,-24(s0)
+   101a0:	1d0000ef          	jal	ra,10370 <hal_send_s>
+   101a4:	fe442503          	lw	a0,-28(s0)
+   101a8:	280000ef          	jal	ra,10428 <hal_send_e>
+   101ac:	fe042503          	lw	a0,-32(s0)
+   101b0:	650000ef          	jal	ra,10800 <hal_trigger_keygen>
+   101b4:	00000013          	addi	zero,zero,0
+   101b8:	01c12083          	lw	ra,28(sp)
+   101bc:	01812403          	lw	s0,24(sp)
+   101c0:	02010113          	addi	sp,sp,32
+   101c4:	00008067          	jalr	zero,0(ra)
 
-000101bc <babykyber_encrypt>:
-   101bc:	fd010113          	addi	sp,sp,-48
-   101c0:	02112623          	sw	ra,44(sp)
-   101c4:	02812423          	sw	s0,40(sp)
-   101c8:	03010413          	addi	s0,sp,48
-   101cc:	fea42623          	sw	a0,-20(s0)
-   101d0:	feb42423          	sw	a1,-24(s0)
-   101d4:	fec42223          	sw	a2,-28(s0)
-   101d8:	fed42023          	sw	a3,-32(s0)
-   101dc:	fce42e23          	sw	a4,-36(s0)
-   101e0:	fec42503          	lw	a0,-20(s0)
-   101e4:	2f0000ef          	jal	ra,104d4 <hal_send_message>
-   101e8:	fe842503          	lw	a0,-24(s0)
-   101ec:	328000ef          	jal	ra,10514 <hal_send_r>
-   101f0:	fe442503          	lw	a0,-28(s0)
-   101f4:	3d8000ef          	jal	ra,105cc <hal_send_e1>
-   101f8:	fe042503          	lw	a0,-32(s0)
-   101fc:	488000ef          	jal	ra,10684 <hal_send_e2>
-   10200:	fdc42503          	lw	a0,-36(s0)
-   10204:	62c000ef          	jal	ra,10830 <hal_trigger_encrypt>
-   10208:	00000013          	addi	zero,zero,0
-   1020c:	02c12083          	lw	ra,44(sp)
-   10210:	02812403          	lw	s0,40(sp)
-   10214:	03010113          	addi	sp,sp,48
-   10218:	00008067          	jalr	zero,0(ra)
+000101c8 <babykyber_encrypt>:
+   101c8:	fd010113          	addi	sp,sp,-48
+   101cc:	02112623          	sw	ra,44(sp)
+   101d0:	02812423          	sw	s0,40(sp)
+   101d4:	03010413          	addi	s0,sp,48
+   101d8:	fea42623          	sw	a0,-20(s0)
+   101dc:	feb42423          	sw	a1,-24(s0)
+   101e0:	fec42223          	sw	a2,-28(s0)
+   101e4:	fed42023          	sw	a3,-32(s0)
+   101e8:	fce42e23          	sw	a4,-36(s0)
+   101ec:	fec42503          	lw	a0,-20(s0)
+   101f0:	2f0000ef          	jal	ra,104e0 <hal_send_message>
+   101f4:	fe842503          	lw	a0,-24(s0)
+   101f8:	328000ef          	jal	ra,10520 <hal_send_r>
+   101fc:	fe442503          	lw	a0,-28(s0)
+   10200:	3d8000ef          	jal	ra,105d8 <hal_send_e1>
+   10204:	fe042503          	lw	a0,-32(s0)
+   10208:	488000ef          	jal	ra,10690 <hal_send_e2>
+   1020c:	fdc42503          	lw	a0,-36(s0)
+   10210:	62c000ef          	jal	ra,1083c <hal_trigger_encrypt>
+   10214:	00000013          	addi	zero,zero,0
+   10218:	02c12083          	lw	ra,44(sp)
+   1021c:	02812403          	lw	s0,40(sp)
+   10220:	03010113          	addi	sp,sp,48
+   10224:	00008067          	jalr	zero,0(ra)
 
-0001021c <babykyber_decrypt>:
-   1021c:	fd010113          	addi	sp,sp,-48
-   10220:	02112623          	sw	ra,44(sp)
-   10224:	02812423          	sw	s0,40(sp)
-   10228:	03010413          	addi	s0,sp,48
-   1022c:	fea42623          	sw	a0,-20(s0)
-   10230:	feb42423          	sw	a1,-24(s0)
-   10234:	fec42223          	sw	a2,-28(s0)
-   10238:	fed42023          	sw	a3,-32(s0)
-   1023c:	fce42e23          	sw	a4,-36(s0)
-   10240:	fcf42c23          	sw	a5,-40(s0)
-   10244:	fd042a23          	sw	a6,-44(s0)
-   10248:	fec42503          	lw	a0,-20(s0)
-   1024c:	620000ef          	jal	ra,1086c <hal_trigger_decrypt>
-   10250:	fe842503          	lw	a0,-24(s0)
-   10254:	654000ef          	jal	ra,108a8 <hal_read_public_key>
-   10258:	fe442503          	lw	a0,-28(s0)
-   1025c:	73c000ef          	jal	ra,10998 <hal_read_secret_key>
-   10260:	fe042503          	lw	a0,-32(s0)
-   10264:	4a0000ef          	jal	ra,10704 <hal_read_ciphertext>
-   10268:	7e8000ef          	jal	ra,10a50 <hal_read_decrypted_message>
-   1026c:	00050713          	addi	a4,a0,0
-   10270:	fdc42783          	lw	a5,-36(s0)
-   10274:	00e7a023          	sw	a4,0(a5)
-   10278:	011000ef          	jal	ra,10a88 <hal_read_decrypted_value>
-   1027c:	00050713          	addi	a4,a0,0
-   10280:	fd842783          	lw	a5,-40(s0)
-   10284:	00e7a023          	sw	a4,0(a5)
-   10288:	039000ef          	jal	ra,10ac0 <hal_read_decrypted_mb>
-   1028c:	00050713          	addi	a4,a0,0
-   10290:	fd442783          	lw	a5,-44(s0)
-   10294:	00e7a023          	sw	a4,0(a5)
-   10298:	00000013          	addi	zero,zero,0
-   1029c:	02c12083          	lw	ra,44(sp)
-   102a0:	02812403          	lw	s0,40(sp)
-   102a4:	03010113          	addi	sp,sp,48
-   102a8:	00008067          	jalr	zero,0(ra)
+00010228 <babykyber_decrypt>:
+   10228:	fd010113          	addi	sp,sp,-48
+   1022c:	02112623          	sw	ra,44(sp)
+   10230:	02812423          	sw	s0,40(sp)
+   10234:	03010413          	addi	s0,sp,48
+   10238:	fea42623          	sw	a0,-20(s0)
+   1023c:	feb42423          	sw	a1,-24(s0)
+   10240:	fec42223          	sw	a2,-28(s0)
+   10244:	fed42023          	sw	a3,-32(s0)
+   10248:	fce42e23          	sw	a4,-36(s0)
+   1024c:	fcf42c23          	sw	a5,-40(s0)
+   10250:	fd042a23          	sw	a6,-44(s0)
+   10254:	fec42503          	lw	a0,-20(s0)
+   10258:	620000ef          	jal	ra,10878 <hal_trigger_decrypt>
+   1025c:	fe842503          	lw	a0,-24(s0)
+   10260:	654000ef          	jal	ra,108b4 <hal_read_public_key>
+   10264:	fe442503          	lw	a0,-28(s0)
+   10268:	73c000ef          	jal	ra,109a4 <hal_read_secret_key>
+   1026c:	fe042503          	lw	a0,-32(s0)
+   10270:	4a0000ef          	jal	ra,10710 <hal_read_ciphertext>
+   10274:	7e8000ef          	jal	ra,10a5c <hal_read_decrypted_message>
+   10278:	00050713          	addi	a4,a0,0
+   1027c:	fdc42783          	lw	a5,-36(s0)
+   10280:	00e7a023          	sw	a4,0(a5)
+   10284:	011000ef          	jal	ra,10a94 <hal_read_decrypted_value>
+   10288:	00050713          	addi	a4,a0,0
+   1028c:	fd842783          	lw	a5,-40(s0)
+   10290:	00e7a023          	sw	a4,0(a5)
+   10294:	039000ef          	jal	ra,10acc <hal_read_decrypted_mb>
+   10298:	00050713          	addi	a4,a0,0
+   1029c:	fd442783          	lw	a5,-44(s0)
+   102a0:	00e7a023          	sw	a4,0(a5)
+   102a4:	00000013          	addi	zero,zero,0
+   102a8:	02c12083          	lw	ra,44(sp)
+   102ac:	02812403          	lw	s0,40(sp)
+   102b0:	03010113          	addi	sp,sp,48
+   102b4:	00008067          	jalr	zero,0(ra)
 
-000102ac <hal_send_A>:
-   102ac:	fd010113          	addi	sp,sp,-48
-   102b0:	02112623          	sw	ra,44(sp)
-   102b4:	02812423          	sw	s0,40(sp)
-   102b8:	03010413          	addi	s0,sp,48
-   102bc:	fca42e23          	sw	a0,-36(s0)
-   102c0:	fe042623          	sw	zero,-20(s0)
-   102c4:	07c0006f          	jal	zero,10340 <hal_send_A+0x94>
-   102c8:	fe042423          	sw	zero,-24(s0)
-   102cc:	05c0006f          	jal	zero,10328 <hal_send_A+0x7c>
-   102d0:	fec42783          	lw	a5,-20(s0)
-   102d4:	00279713          	slli	a4,a5,0x2
-   102d8:	fe842783          	lw	a5,-24(s0)
-   102dc:	00f70733          	add	a4,a4,a5
-   102e0:	100027b7          	lui	a5,0x10002
-   102e4:	c0078793          	addi	a5,a5,-1024 # 10001c00 <__global_pointer$+0xffef908>
-   102e8:	00f707b3          	add	a5,a4,a5
-   102ec:	00279793          	slli	a5,a5,0x2
-   102f0:	fef42223          	sw	a5,-28(s0)
-   102f4:	fec42783          	lw	a5,-20(s0)
-   102f8:	00479793          	slli	a5,a5,0x4
-   102fc:	fdc42703          	lw	a4,-36(s0)
-   10300:	00f70733          	add	a4,a4,a5
-   10304:	fe842783          	lw	a5,-24(s0)
-   10308:	00279793          	slli	a5,a5,0x2
-   1030c:	00f707b3          	add	a5,a4,a5
-   10310:	0007a703          	lw	a4,0(a5)
-   10314:	fe442783          	lw	a5,-28(s0)
-   10318:	00e7a023          	sw	a4,0(a5)
-   1031c:	fe842783          	lw	a5,-24(s0)
-   10320:	00178793          	addi	a5,a5,1
-   10324:	fef42423          	sw	a5,-24(s0)
-   10328:	fe842703          	lw	a4,-24(s0)
-   1032c:	00300793          	addi	a5,zero,3
-   10330:	fae7d0e3          	bge	a5,a4,102d0 <hal_send_A+0x24>
-   10334:	fec42783          	lw	a5,-20(s0)
-   10338:	00178793          	addi	a5,a5,1
-   1033c:	fef42623          	sw	a5,-20(s0)
-   10340:	fec42703          	lw	a4,-20(s0)
-   10344:	00300793          	addi	a5,zero,3
-   10348:	f8e7d0e3          	bge	a5,a4,102c8 <hal_send_A+0x1c>
-   1034c:	00000013          	addi	zero,zero,0
-   10350:	00000013          	addi	zero,zero,0
-   10354:	02c12083          	lw	ra,44(sp)
-   10358:	02812403          	lw	s0,40(sp)
-   1035c:	03010113          	addi	sp,sp,48
-   10360:	00008067          	jalr	zero,0(ra)
+000102b8 <hal_send_A>:
+   102b8:	fd010113          	addi	sp,sp,-48
+   102bc:	02112623          	sw	ra,44(sp)
+   102c0:	02812423          	sw	s0,40(sp)
+   102c4:	03010413          	addi	s0,sp,48
+   102c8:	fca42e23          	sw	a0,-36(s0)
+   102cc:	fe042623          	sw	zero,-20(s0)
+   102d0:	07c0006f          	jal	zero,1034c <hal_send_A+0x94>
+   102d4:	fe042423          	sw	zero,-24(s0)
+   102d8:	05c0006f          	jal	zero,10334 <hal_send_A+0x7c>
+   102dc:	fec42783          	lw	a5,-20(s0)
+   102e0:	00279713          	slli	a4,a5,0x2
+   102e4:	fe842783          	lw	a5,-24(s0)
+   102e8:	00f70733          	add	a4,a4,a5
+   102ec:	100027b7          	lui	a5,0x10002
+   102f0:	c0078793          	addi	a5,a5,-1024 # 10001c00 <__global_pointer$+0xffef8fc>
+   102f4:	00f707b3          	add	a5,a4,a5
+   102f8:	00279793          	slli	a5,a5,0x2
+   102fc:	fef42223          	sw	a5,-28(s0)
+   10300:	fec42783          	lw	a5,-20(s0)
+   10304:	00479793          	slli	a5,a5,0x4
+   10308:	fdc42703          	lw	a4,-36(s0)
+   1030c:	00f70733          	add	a4,a4,a5
+   10310:	fe842783          	lw	a5,-24(s0)
+   10314:	00279793          	slli	a5,a5,0x2
+   10318:	00f707b3          	add	a5,a4,a5
+   1031c:	0007a703          	lw	a4,0(a5)
+   10320:	fe442783          	lw	a5,-28(s0)
+   10324:	00e7a023          	sw	a4,0(a5)
+   10328:	fe842783          	lw	a5,-24(s0)
+   1032c:	00178793          	addi	a5,a5,1
+   10330:	fef42423          	sw	a5,-24(s0)
+   10334:	fe842703          	lw	a4,-24(s0)
+   10338:	00300793          	addi	a5,zero,3
+   1033c:	fae7d0e3          	bge	a5,a4,102dc <hal_send_A+0x24>
+   10340:	fec42783          	lw	a5,-20(s0)
+   10344:	00178793          	addi	a5,a5,1
+   10348:	fef42623          	sw	a5,-20(s0)
+   1034c:	fec42703          	lw	a4,-20(s0)
+   10350:	00300793          	addi	a5,zero,3
+   10354:	f8e7d0e3          	bge	a5,a4,102d4 <hal_send_A+0x1c>
+   10358:	00000013          	addi	zero,zero,0
+   1035c:	00000013          	addi	zero,zero,0
+   10360:	02c12083          	lw	ra,44(sp)
+   10364:	02812403          	lw	s0,40(sp)
+   10368:	03010113          	addi	sp,sp,48
+   1036c:	00008067          	jalr	zero,0(ra)
 
-00010364 <hal_send_s>:
-   10364:	fd010113          	addi	sp,sp,-48
-   10368:	02112623          	sw	ra,44(sp)
-   1036c:	02812423          	sw	s0,40(sp)
-   10370:	03010413          	addi	s0,sp,48
-   10374:	fca42e23          	sw	a0,-36(s0)
-   10378:	fe042623          	sw	zero,-20(s0)
-   1037c:	07c0006f          	jal	zero,103f8 <hal_send_s+0x94>
-   10380:	fe042423          	sw	zero,-24(s0)
-   10384:	05c0006f          	jal	zero,103e0 <hal_send_s+0x7c>
-   10388:	fec42783          	lw	a5,-20(s0)
-   1038c:	00279713          	slli	a4,a5,0x2
-   10390:	fe842783          	lw	a5,-24(s0)
-   10394:	00f70733          	add	a4,a4,a5
-   10398:	100027b7          	lui	a5,0x10002
-   1039c:	c1078793          	addi	a5,a5,-1008 # 10001c10 <__global_pointer$+0xffef918>
-   103a0:	00f707b3          	add	a5,a4,a5
-   103a4:	00279793          	slli	a5,a5,0x2
-   103a8:	fef42223          	sw	a5,-28(s0)
-   103ac:	fec42783          	lw	a5,-20(s0)
-   103b0:	00479793          	slli	a5,a5,0x4
-   103b4:	fdc42703          	lw	a4,-36(s0)
-   103b8:	00f70733          	add	a4,a4,a5
-   103bc:	fe842783          	lw	a5,-24(s0)
-   103c0:	00279793          	slli	a5,a5,0x2
-   103c4:	00f707b3          	add	a5,a4,a5
-   103c8:	0007a703          	lw	a4,0(a5)
-   103cc:	fe442783          	lw	a5,-28(s0)
-   103d0:	00e7a023          	sw	a4,0(a5)
-   103d4:	fe842783          	lw	a5,-24(s0)
-   103d8:	00178793          	addi	a5,a5,1
-   103dc:	fef42423          	sw	a5,-24(s0)
-   103e0:	fe842703          	lw	a4,-24(s0)
-   103e4:	00300793          	addi	a5,zero,3
-   103e8:	fae7d0e3          	bge	a5,a4,10388 <hal_send_s+0x24>
-   103ec:	fec42783          	lw	a5,-20(s0)
-   103f0:	00178793          	addi	a5,a5,1
-   103f4:	fef42623          	sw	a5,-20(s0)
-   103f8:	fec42703          	lw	a4,-20(s0)
-   103fc:	00100793          	addi	a5,zero,1
-   10400:	f8e7d0e3          	bge	a5,a4,10380 <hal_send_s+0x1c>
-   10404:	00000013          	addi	zero,zero,0
-   10408:	00000013          	addi	zero,zero,0
-   1040c:	02c12083          	lw	ra,44(sp)
-   10410:	02812403          	lw	s0,40(sp)
-   10414:	03010113          	addi	sp,sp,48
-   10418:	00008067          	jalr	zero,0(ra)
+00010370 <hal_send_s>:
+   10370:	fd010113          	addi	sp,sp,-48
+   10374:	02112623          	sw	ra,44(sp)
+   10378:	02812423          	sw	s0,40(sp)
+   1037c:	03010413          	addi	s0,sp,48
+   10380:	fca42e23          	sw	a0,-36(s0)
+   10384:	fe042623          	sw	zero,-20(s0)
+   10388:	07c0006f          	jal	zero,10404 <hal_send_s+0x94>
+   1038c:	fe042423          	sw	zero,-24(s0)
+   10390:	05c0006f          	jal	zero,103ec <hal_send_s+0x7c>
+   10394:	fec42783          	lw	a5,-20(s0)
+   10398:	00279713          	slli	a4,a5,0x2
+   1039c:	fe842783          	lw	a5,-24(s0)
+   103a0:	00f70733          	add	a4,a4,a5
+   103a4:	100027b7          	lui	a5,0x10002
+   103a8:	c1078793          	addi	a5,a5,-1008 # 10001c10 <__global_pointer$+0xffef90c>
+   103ac:	00f707b3          	add	a5,a4,a5
+   103b0:	00279793          	slli	a5,a5,0x2
+   103b4:	fef42223          	sw	a5,-28(s0)
+   103b8:	fec42783          	lw	a5,-20(s0)
+   103bc:	00479793          	slli	a5,a5,0x4
+   103c0:	fdc42703          	lw	a4,-36(s0)
+   103c4:	00f70733          	add	a4,a4,a5
+   103c8:	fe842783          	lw	a5,-24(s0)
+   103cc:	00279793          	slli	a5,a5,0x2
+   103d0:	00f707b3          	add	a5,a4,a5
+   103d4:	0007a703          	lw	a4,0(a5)
+   103d8:	fe442783          	lw	a5,-28(s0)
+   103dc:	00e7a023          	sw	a4,0(a5)
+   103e0:	fe842783          	lw	a5,-24(s0)
+   103e4:	00178793          	addi	a5,a5,1
+   103e8:	fef42423          	sw	a5,-24(s0)
+   103ec:	fe842703          	lw	a4,-24(s0)
+   103f0:	00300793          	addi	a5,zero,3
+   103f4:	fae7d0e3          	bge	a5,a4,10394 <hal_send_s+0x24>
+   103f8:	fec42783          	lw	a5,-20(s0)
+   103fc:	00178793          	addi	a5,a5,1
+   10400:	fef42623          	sw	a5,-20(s0)
+   10404:	fec42703          	lw	a4,-20(s0)
+   10408:	00100793          	addi	a5,zero,1
+   1040c:	f8e7d0e3          	bge	a5,a4,1038c <hal_send_s+0x1c>
+   10410:	00000013          	addi	zero,zero,0
+   10414:	00000013          	addi	zero,zero,0
+   10418:	02c12083          	lw	ra,44(sp)
+   1041c:	02812403          	lw	s0,40(sp)
+   10420:	03010113          	addi	sp,sp,48
+   10424:	00008067          	jalr	zero,0(ra)
 
-0001041c <hal_send_e>:
-   1041c:	fd010113          	addi	sp,sp,-48
-   10420:	02112623          	sw	ra,44(sp)
-   10424:	02812423          	sw	s0,40(sp)
-   10428:	03010413          	addi	s0,sp,48
-   1042c:	fca42e23          	sw	a0,-36(s0)
-   10430:	fe042623          	sw	zero,-20(s0)
-   10434:	07c0006f          	jal	zero,104b0 <hal_send_e+0x94>
-   10438:	fe042423          	sw	zero,-24(s0)
-   1043c:	05c0006f          	jal	zero,10498 <hal_send_e+0x7c>
-   10440:	fec42783          	lw	a5,-20(s0)
-   10444:	00279713          	slli	a4,a5,0x2
-   10448:	fe842783          	lw	a5,-24(s0)
-   1044c:	00f70733          	add	a4,a4,a5
-   10450:	100027b7          	lui	a5,0x10002
-   10454:	c1878793          	addi	a5,a5,-1000 # 10001c18 <__global_pointer$+0xffef920>
-   10458:	00f707b3          	add	a5,a4,a5
-   1045c:	00279793          	slli	a5,a5,0x2
-   10460:	fef42223          	sw	a5,-28(s0)
-   10464:	fec42783          	lw	a5,-20(s0)
-   10468:	00479793          	slli	a5,a5,0x4
-   1046c:	fdc42703          	lw	a4,-36(s0)
-   10470:	00f70733          	add	a4,a4,a5
-   10474:	fe842783          	lw	a5,-24(s0)
-   10478:	00279793          	slli	a5,a5,0x2
-   1047c:	00f707b3          	add	a5,a4,a5
-   10480:	0007a703          	lw	a4,0(a5)
-   10484:	fe442783          	lw	a5,-28(s0)
-   10488:	00e7a023          	sw	a4,0(a5)
-   1048c:	fe842783          	lw	a5,-24(s0)
-   10490:	00178793          	addi	a5,a5,1
-   10494:	fef42423          	sw	a5,-24(s0)
-   10498:	fe842703          	lw	a4,-24(s0)
-   1049c:	00300793          	addi	a5,zero,3
-   104a0:	fae7d0e3          	bge	a5,a4,10440 <hal_send_e+0x24>
-   104a4:	fec42783          	lw	a5,-20(s0)
-   104a8:	00178793          	addi	a5,a5,1
-   104ac:	fef42623          	sw	a5,-20(s0)
-   104b0:	fec42703          	lw	a4,-20(s0)
-   104b4:	00100793          	addi	a5,zero,1
-   104b8:	f8e7d0e3          	bge	a5,a4,10438 <hal_send_e+0x1c>
-   104bc:	00000013          	addi	zero,zero,0
-   104c0:	00000013          	addi	zero,zero,0
-   104c4:	02c12083          	lw	ra,44(sp)
-   104c8:	02812403          	lw	s0,40(sp)
-   104cc:	03010113          	addi	sp,sp,48
-   104d0:	00008067          	jalr	zero,0(ra)
+00010428 <hal_send_e>:
+   10428:	fd010113          	addi	sp,sp,-48
+   1042c:	02112623          	sw	ra,44(sp)
+   10430:	02812423          	sw	s0,40(sp)
+   10434:	03010413          	addi	s0,sp,48
+   10438:	fca42e23          	sw	a0,-36(s0)
+   1043c:	fe042623          	sw	zero,-20(s0)
+   10440:	07c0006f          	jal	zero,104bc <hal_send_e+0x94>
+   10444:	fe042423          	sw	zero,-24(s0)
+   10448:	05c0006f          	jal	zero,104a4 <hal_send_e+0x7c>
+   1044c:	fec42783          	lw	a5,-20(s0)
+   10450:	00279713          	slli	a4,a5,0x2
+   10454:	fe842783          	lw	a5,-24(s0)
+   10458:	00f70733          	add	a4,a4,a5
+   1045c:	100027b7          	lui	a5,0x10002
+   10460:	c1878793          	addi	a5,a5,-1000 # 10001c18 <__global_pointer$+0xffef914>
+   10464:	00f707b3          	add	a5,a4,a5
+   10468:	00279793          	slli	a5,a5,0x2
+   1046c:	fef42223          	sw	a5,-28(s0)
+   10470:	fec42783          	lw	a5,-20(s0)
+   10474:	00479793          	slli	a5,a5,0x4
+   10478:	fdc42703          	lw	a4,-36(s0)
+   1047c:	00f70733          	add	a4,a4,a5
+   10480:	fe842783          	lw	a5,-24(s0)
+   10484:	00279793          	slli	a5,a5,0x2
+   10488:	00f707b3          	add	a5,a4,a5
+   1048c:	0007a703          	lw	a4,0(a5)
+   10490:	fe442783          	lw	a5,-28(s0)
+   10494:	00e7a023          	sw	a4,0(a5)
+   10498:	fe842783          	lw	a5,-24(s0)
+   1049c:	00178793          	addi	a5,a5,1
+   104a0:	fef42423          	sw	a5,-24(s0)
+   104a4:	fe842703          	lw	a4,-24(s0)
+   104a8:	00300793          	addi	a5,zero,3
+   104ac:	fae7d0e3          	bge	a5,a4,1044c <hal_send_e+0x24>
+   104b0:	fec42783          	lw	a5,-20(s0)
+   104b4:	00178793          	addi	a5,a5,1
+   104b8:	fef42623          	sw	a5,-20(s0)
+   104bc:	fec42703          	lw	a4,-20(s0)
+   104c0:	00100793          	addi	a5,zero,1
+   104c4:	f8e7d0e3          	bge	a5,a4,10444 <hal_send_e+0x1c>
+   104c8:	00000013          	addi	zero,zero,0
+   104cc:	00000013          	addi	zero,zero,0
+   104d0:	02c12083          	lw	ra,44(sp)
+   104d4:	02812403          	lw	s0,40(sp)
+   104d8:	03010113          	addi	sp,sp,48
+   104dc:	00008067          	jalr	zero,0(ra)
 
-000104d4 <hal_send_message>:
-   104d4:	fd010113          	addi	sp,sp,-48
-   104d8:	02112623          	sw	ra,44(sp)
-   104dc:	02812423          	sw	s0,40(sp)
-   104e0:	03010413          	addi	s0,sp,48
-   104e4:	fca42e23          	sw	a0,-36(s0)
-   104e8:	400077b7          	lui	a5,0x40007
-   104ec:	08078793          	addi	a5,a5,128 # 40007080 <__global_pointer$+0x3fff4d88>
-   104f0:	fef42623          	sw	a5,-20(s0)
-   104f4:	fec42783          	lw	a5,-20(s0)
-   104f8:	fdc42703          	lw	a4,-36(s0)
-   104fc:	00e7a023          	sw	a4,0(a5)
-   10500:	00000013          	addi	zero,zero,0
-   10504:	02c12083          	lw	ra,44(sp)
-   10508:	02812403          	lw	s0,40(sp)
-   1050c:	03010113          	addi	sp,sp,48
-   10510:	00008067          	jalr	zero,0(ra)
+000104e0 <hal_send_message>:
+   104e0:	fd010113          	addi	sp,sp,-48
+   104e4:	02112623          	sw	ra,44(sp)
+   104e8:	02812423          	sw	s0,40(sp)
+   104ec:	03010413          	addi	s0,sp,48
+   104f0:	fca42e23          	sw	a0,-36(s0)
+   104f4:	400077b7          	lui	a5,0x40007
+   104f8:	08078793          	addi	a5,a5,128 # 40007080 <__global_pointer$+0x3fff4d7c>
+   104fc:	fef42623          	sw	a5,-20(s0)
+   10500:	fec42783          	lw	a5,-20(s0)
+   10504:	fdc42703          	lw	a4,-36(s0)
+   10508:	00e7a023          	sw	a4,0(a5)
+   1050c:	00000013          	addi	zero,zero,0
+   10510:	02c12083          	lw	ra,44(sp)
+   10514:	02812403          	lw	s0,40(sp)
+   10518:	03010113          	addi	sp,sp,48
+   1051c:	00008067          	jalr	zero,0(ra)
 
-00010514 <hal_send_r>:
-   10514:	fd010113          	addi	sp,sp,-48
-   10518:	02112623          	sw	ra,44(sp)
-   1051c:	02812423          	sw	s0,40(sp)
-   10520:	03010413          	addi	s0,sp,48
-   10524:	fca42e23          	sw	a0,-36(s0)
-   10528:	fe042623          	sw	zero,-20(s0)
-   1052c:	07c0006f          	jal	zero,105a8 <hal_send_r+0x94>
-   10530:	fe042423          	sw	zero,-24(s0)
-   10534:	05c0006f          	jal	zero,10590 <hal_send_r+0x7c>
-   10538:	fec42783          	lw	a5,-20(s0)
-   1053c:	00279713          	slli	a4,a5,0x2
-   10540:	fe842783          	lw	a5,-24(s0)
-   10544:	00f70733          	add	a4,a4,a5
-   10548:	100027b7          	lui	a5,0x10002
-   1054c:	c2178793          	addi	a5,a5,-991 # 10001c21 <__global_pointer$+0xffef929>
-   10550:	00f707b3          	add	a5,a4,a5
-   10554:	00279793          	slli	a5,a5,0x2
-   10558:	fef42223          	sw	a5,-28(s0)
-   1055c:	fec42783          	lw	a5,-20(s0)
-   10560:	00479793          	slli	a5,a5,0x4
-   10564:	fdc42703          	lw	a4,-36(s0)
-   10568:	00f70733          	add	a4,a4,a5
-   1056c:	fe842783          	lw	a5,-24(s0)
-   10570:	00279793          	slli	a5,a5,0x2
-   10574:	00f707b3          	add	a5,a4,a5
-   10578:	0007a703          	lw	a4,0(a5)
-   1057c:	fe442783          	lw	a5,-28(s0)
-   10580:	00e7a023          	sw	a4,0(a5)
-   10584:	fe842783          	lw	a5,-24(s0)
-   10588:	00178793          	addi	a5,a5,1
-   1058c:	fef42423          	sw	a5,-24(s0)
-   10590:	fe842703          	lw	a4,-24(s0)
-   10594:	00300793          	addi	a5,zero,3
-   10598:	fae7d0e3          	bge	a5,a4,10538 <hal_send_r+0x24>
-   1059c:	fec42783          	lw	a5,-20(s0)
-   105a0:	00178793          	addi	a5,a5,1
-   105a4:	fef42623          	sw	a5,-20(s0)
-   105a8:	fec42703          	lw	a4,-20(s0)
-   105ac:	00100793          	addi	a5,zero,1
-   105b0:	f8e7d0e3          	bge	a5,a4,10530 <hal_send_r+0x1c>
-   105b4:	00000013          	addi	zero,zero,0
-   105b8:	00000013          	addi	zero,zero,0
-   105bc:	02c12083          	lw	ra,44(sp)
-   105c0:	02812403          	lw	s0,40(sp)
-   105c4:	03010113          	addi	sp,sp,48
-   105c8:	00008067          	jalr	zero,0(ra)
+00010520 <hal_send_r>:
+   10520:	fd010113          	addi	sp,sp,-48
+   10524:	02112623          	sw	ra,44(sp)
+   10528:	02812423          	sw	s0,40(sp)
+   1052c:	03010413          	addi	s0,sp,48
+   10530:	fca42e23          	sw	a0,-36(s0)
+   10534:	fe042623          	sw	zero,-20(s0)
+   10538:	07c0006f          	jal	zero,105b4 <hal_send_r+0x94>
+   1053c:	fe042423          	sw	zero,-24(s0)
+   10540:	05c0006f          	jal	zero,1059c <hal_send_r+0x7c>
+   10544:	fec42783          	lw	a5,-20(s0)
+   10548:	00279713          	slli	a4,a5,0x2
+   1054c:	fe842783          	lw	a5,-24(s0)
+   10550:	00f70733          	add	a4,a4,a5
+   10554:	100027b7          	lui	a5,0x10002
+   10558:	c2178793          	addi	a5,a5,-991 # 10001c21 <__global_pointer$+0xffef91d>
+   1055c:	00f707b3          	add	a5,a4,a5
+   10560:	00279793          	slli	a5,a5,0x2
+   10564:	fef42223          	sw	a5,-28(s0)
+   10568:	fec42783          	lw	a5,-20(s0)
+   1056c:	00479793          	slli	a5,a5,0x4
+   10570:	fdc42703          	lw	a4,-36(s0)
+   10574:	00f70733          	add	a4,a4,a5
+   10578:	fe842783          	lw	a5,-24(s0)
+   1057c:	00279793          	slli	a5,a5,0x2
+   10580:	00f707b3          	add	a5,a4,a5
+   10584:	0007a703          	lw	a4,0(a5)
+   10588:	fe442783          	lw	a5,-28(s0)
+   1058c:	00e7a023          	sw	a4,0(a5)
+   10590:	fe842783          	lw	a5,-24(s0)
+   10594:	00178793          	addi	a5,a5,1
+   10598:	fef42423          	sw	a5,-24(s0)
+   1059c:	fe842703          	lw	a4,-24(s0)
+   105a0:	00300793          	addi	a5,zero,3
+   105a4:	fae7d0e3          	bge	a5,a4,10544 <hal_send_r+0x24>
+   105a8:	fec42783          	lw	a5,-20(s0)
+   105ac:	00178793          	addi	a5,a5,1
+   105b0:	fef42623          	sw	a5,-20(s0)
+   105b4:	fec42703          	lw	a4,-20(s0)
+   105b8:	00100793          	addi	a5,zero,1
+   105bc:	f8e7d0e3          	bge	a5,a4,1053c <hal_send_r+0x1c>
+   105c0:	00000013          	addi	zero,zero,0
+   105c4:	00000013          	addi	zero,zero,0
+   105c8:	02c12083          	lw	ra,44(sp)
+   105cc:	02812403          	lw	s0,40(sp)
+   105d0:	03010113          	addi	sp,sp,48
+   105d4:	00008067          	jalr	zero,0(ra)
 
-000105cc <hal_send_e1>:
-   105cc:	fd010113          	addi	sp,sp,-48
-   105d0:	02112623          	sw	ra,44(sp)
-   105d4:	02812423          	sw	s0,40(sp)
-   105d8:	03010413          	addi	s0,sp,48
-   105dc:	fca42e23          	sw	a0,-36(s0)
-   105e0:	fe042623          	sw	zero,-20(s0)
-   105e4:	07c0006f          	jal	zero,10660 <hal_send_e1+0x94>
-   105e8:	fe042423          	sw	zero,-24(s0)
-   105ec:	05c0006f          	jal	zero,10648 <hal_send_e1+0x7c>
-   105f0:	fec42783          	lw	a5,-20(s0)
-   105f4:	00279713          	slli	a4,a5,0x2
-   105f8:	fe842783          	lw	a5,-24(s0)
-   105fc:	00f70733          	add	a4,a4,a5
-   10600:	100027b7          	lui	a5,0x10002
-   10604:	c2978793          	addi	a5,a5,-983 # 10001c29 <__global_pointer$+0xffef931>
-   10608:	00f707b3          	add	a5,a4,a5
-   1060c:	00279793          	slli	a5,a5,0x2
-   10610:	fef42223          	sw	a5,-28(s0)
-   10614:	fec42783          	lw	a5,-20(s0)
-   10618:	00479793          	slli	a5,a5,0x4
-   1061c:	fdc42703          	lw	a4,-36(s0)
-   10620:	00f70733          	add	a4,a4,a5
-   10624:	fe842783          	lw	a5,-24(s0)
-   10628:	00279793          	slli	a5,a5,0x2
-   1062c:	00f707b3          	add	a5,a4,a5
-   10630:	0007a703          	lw	a4,0(a5)
-   10634:	fe442783          	lw	a5,-28(s0)
-   10638:	00e7a023          	sw	a4,0(a5)
-   1063c:	fe842783          	lw	a5,-24(s0)
-   10640:	00178793          	addi	a5,a5,1
-   10644:	fef42423          	sw	a5,-24(s0)
-   10648:	fe842703          	lw	a4,-24(s0)
-   1064c:	00300793          	addi	a5,zero,3
-   10650:	fae7d0e3          	bge	a5,a4,105f0 <hal_send_e1+0x24>
-   10654:	fec42783          	lw	a5,-20(s0)
-   10658:	00178793          	addi	a5,a5,1
-   1065c:	fef42623          	sw	a5,-20(s0)
-   10660:	fec42703          	lw	a4,-20(s0)
-   10664:	00100793          	addi	a5,zero,1
-   10668:	f8e7d0e3          	bge	a5,a4,105e8 <hal_send_e1+0x1c>
-   1066c:	00000013          	addi	zero,zero,0
-   10670:	00000013          	addi	zero,zero,0
-   10674:	02c12083          	lw	ra,44(sp)
-   10678:	02812403          	lw	s0,40(sp)
-   1067c:	03010113          	addi	sp,sp,48
-   10680:	00008067          	jalr	zero,0(ra)
+000105d8 <hal_send_e1>:
+   105d8:	fd010113          	addi	sp,sp,-48
+   105dc:	02112623          	sw	ra,44(sp)
+   105e0:	02812423          	sw	s0,40(sp)
+   105e4:	03010413          	addi	s0,sp,48
+   105e8:	fca42e23          	sw	a0,-36(s0)
+   105ec:	fe042623          	sw	zero,-20(s0)
+   105f0:	07c0006f          	jal	zero,1066c <hal_send_e1+0x94>
+   105f4:	fe042423          	sw	zero,-24(s0)
+   105f8:	05c0006f          	jal	zero,10654 <hal_send_e1+0x7c>
+   105fc:	fec42783          	lw	a5,-20(s0)
+   10600:	00279713          	slli	a4,a5,0x2
+   10604:	fe842783          	lw	a5,-24(s0)
+   10608:	00f70733          	add	a4,a4,a5
+   1060c:	100027b7          	lui	a5,0x10002
+   10610:	c2978793          	addi	a5,a5,-983 # 10001c29 <__global_pointer$+0xffef925>
+   10614:	00f707b3          	add	a5,a4,a5
+   10618:	00279793          	slli	a5,a5,0x2
+   1061c:	fef42223          	sw	a5,-28(s0)
+   10620:	fec42783          	lw	a5,-20(s0)
+   10624:	00479793          	slli	a5,a5,0x4
+   10628:	fdc42703          	lw	a4,-36(s0)
+   1062c:	00f70733          	add	a4,a4,a5
+   10630:	fe842783          	lw	a5,-24(s0)
+   10634:	00279793          	slli	a5,a5,0x2
+   10638:	00f707b3          	add	a5,a4,a5
+   1063c:	0007a703          	lw	a4,0(a5)
+   10640:	fe442783          	lw	a5,-28(s0)
+   10644:	00e7a023          	sw	a4,0(a5)
+   10648:	fe842783          	lw	a5,-24(s0)
+   1064c:	00178793          	addi	a5,a5,1
+   10650:	fef42423          	sw	a5,-24(s0)
+   10654:	fe842703          	lw	a4,-24(s0)
+   10658:	00300793          	addi	a5,zero,3
+   1065c:	fae7d0e3          	bge	a5,a4,105fc <hal_send_e1+0x24>
+   10660:	fec42783          	lw	a5,-20(s0)
+   10664:	00178793          	addi	a5,a5,1
+   10668:	fef42623          	sw	a5,-20(s0)
+   1066c:	fec42703          	lw	a4,-20(s0)
+   10670:	00100793          	addi	a5,zero,1
+   10674:	f8e7d0e3          	bge	a5,a4,105f4 <hal_send_e1+0x1c>
+   10678:	00000013          	addi	zero,zero,0
+   1067c:	00000013          	addi	zero,zero,0
+   10680:	02c12083          	lw	ra,44(sp)
+   10684:	02812403          	lw	s0,40(sp)
+   10688:	03010113          	addi	sp,sp,48
+   1068c:	00008067          	jalr	zero,0(ra)
 
-00010684 <hal_send_e2>:
-   10684:	fd010113          	addi	sp,sp,-48
-   10688:	02112623          	sw	ra,44(sp)
-   1068c:	02812423          	sw	s0,40(sp)
-   10690:	03010413          	addi	s0,sp,48
-   10694:	fca42e23          	sw	a0,-36(s0)
-   10698:	fe042623          	sw	zero,-20(s0)
-   1069c:	0440006f          	jal	zero,106e0 <hal_send_e2+0x5c>
-   106a0:	fec42703          	lw	a4,-20(s0)
-   106a4:	100027b7          	lui	a5,0x10002
-   106a8:	c3178793          	addi	a5,a5,-975 # 10001c31 <__global_pointer$+0xffef939>
-   106ac:	00f707b3          	add	a5,a4,a5
-   106b0:	00279793          	slli	a5,a5,0x2
-   106b4:	fef42423          	sw	a5,-24(s0)
-   106b8:	fec42783          	lw	a5,-20(s0)
+00010690 <hal_send_e2>:
+   10690:	fd010113          	addi	sp,sp,-48
+   10694:	02112623          	sw	ra,44(sp)
+   10698:	02812423          	sw	s0,40(sp)
+   1069c:	03010413          	addi	s0,sp,48
+   106a0:	fca42e23          	sw	a0,-36(s0)
+   106a4:	fe042623          	sw	zero,-20(s0)
+   106a8:	0440006f          	jal	zero,106ec <hal_send_e2+0x5c>
+   106ac:	fec42703          	lw	a4,-20(s0)
+   106b0:	100027b7          	lui	a5,0x10002
+   106b4:	c3178793          	addi	a5,a5,-975 # 10001c31 <__global_pointer$+0xffef92d>
+   106b8:	00f707b3          	add	a5,a4,a5
    106bc:	00279793          	slli	a5,a5,0x2
-   106c0:	fdc42703          	lw	a4,-36(s0)
-   106c4:	00f707b3          	add	a5,a4,a5
-   106c8:	0007a703          	lw	a4,0(a5)
-   106cc:	fe842783          	lw	a5,-24(s0)
-   106d0:	00e7a023          	sw	a4,0(a5)
-   106d4:	fec42783          	lw	a5,-20(s0)
-   106d8:	00178793          	addi	a5,a5,1
-   106dc:	fef42623          	sw	a5,-20(s0)
-   106e0:	fec42703          	lw	a4,-20(s0)
-   106e4:	00300793          	addi	a5,zero,3
-   106e8:	fae7dce3          	bge	a5,a4,106a0 <hal_send_e2+0x1c>
-   106ec:	00000013          	addi	zero,zero,0
-   106f0:	00000013          	addi	zero,zero,0
-   106f4:	02c12083          	lw	ra,44(sp)
-   106f8:	02812403          	lw	s0,40(sp)
-   106fc:	03010113          	addi	sp,sp,48
-   10700:	00008067          	jalr	zero,0(ra)
+   106c0:	fef42423          	sw	a5,-24(s0)
+   106c4:	fec42783          	lw	a5,-20(s0)
+   106c8:	00279793          	slli	a5,a5,0x2
+   106cc:	fdc42703          	lw	a4,-36(s0)
+   106d0:	00f707b3          	add	a5,a4,a5
+   106d4:	0007a703          	lw	a4,0(a5)
+   106d8:	fe842783          	lw	a5,-24(s0)
+   106dc:	00e7a023          	sw	a4,0(a5)
+   106e0:	fec42783          	lw	a5,-20(s0)
+   106e4:	00178793          	addi	a5,a5,1
+   106e8:	fef42623          	sw	a5,-20(s0)
+   106ec:	fec42703          	lw	a4,-20(s0)
+   106f0:	00300793          	addi	a5,zero,3
+   106f4:	fae7dce3          	bge	a5,a4,106ac <hal_send_e2+0x1c>
+   106f8:	00000013          	addi	zero,zero,0
+   106fc:	00000013          	addi	zero,zero,0
+   10700:	02c12083          	lw	ra,44(sp)
+   10704:	02812403          	lw	s0,40(sp)
+   10708:	03010113          	addi	sp,sp,48
+   1070c:	00008067          	jalr	zero,0(ra)
 
-00010704 <hal_read_ciphertext>:
-   10704:	fd010113          	addi	sp,sp,-48
-   10708:	02112623          	sw	ra,44(sp)
-   1070c:	02812423          	sw	s0,40(sp)
-   10710:	03010413          	addi	s0,sp,48
-   10714:	fca42e23          	sw	a0,-36(s0)
-   10718:	fe042623          	sw	zero,-20(s0)
-   1071c:	0b40006f          	jal	zero,107d0 <hal_read_ciphertext+0xcc>
-   10720:	fe042423          	sw	zero,-24(s0)
-   10724:	0940006f          	jal	zero,107b8 <hal_read_ciphertext+0xb4>
-   10728:	fe042223          	sw	zero,-28(s0)
-   1072c:	0740006f          	jal	zero,107a0 <hal_read_ciphertext+0x9c>
-   10730:	fec42783          	lw	a5,-20(s0)
-   10734:	00179713          	slli	a4,a5,0x1
-   10738:	fe842783          	lw	a5,-24(s0)
-   1073c:	00f707b3          	add	a5,a4,a5
-   10740:	00279713          	slli	a4,a5,0x2
-   10744:	fe442783          	lw	a5,-28(s0)
-   10748:	00f70733          	add	a4,a4,a5
-   1074c:	100027b7          	lui	a5,0x10002
-   10750:	ca078793          	addi	a5,a5,-864 # 10001ca0 <__global_pointer$+0xffef9a8>
-   10754:	00f707b3          	add	a5,a4,a5
-   10758:	00279793          	slli	a5,a5,0x2
-   1075c:	fef42023          	sw	a5,-32(s0)
-   10760:	fec42783          	lw	a5,-20(s0)
-   10764:	00579793          	slli	a5,a5,0x5
-   10768:	fdc42703          	lw	a4,-36(s0)
-   1076c:	00f706b3          	add	a3,a4,a5
-   10770:	fe042783          	lw	a5,-32(s0)
-   10774:	0007a703          	lw	a4,0(a5)
-   10778:	fe842783          	lw	a5,-24(s0)
-   1077c:	00279613          	slli	a2,a5,0x2
-   10780:	fe442783          	lw	a5,-28(s0)
-   10784:	00f607b3          	add	a5,a2,a5
-   10788:	00279793          	slli	a5,a5,0x2
-   1078c:	00f687b3          	add	a5,a3,a5
-   10790:	00e7a023          	sw	a4,0(a5)
-   10794:	fe442783          	lw	a5,-28(s0)
-   10798:	00178793          	addi	a5,a5,1
-   1079c:	fef42223          	sw	a5,-28(s0)
-   107a0:	fe442703          	lw	a4,-28(s0)
-   107a4:	00300793          	addi	a5,zero,3
-   107a8:	f8e7d4e3          	bge	a5,a4,10730 <hal_read_ciphertext+0x2c>
-   107ac:	fe842783          	lw	a5,-24(s0)
-   107b0:	00178793          	addi	a5,a5,1
-   107b4:	fef42423          	sw	a5,-24(s0)
-   107b8:	fe842703          	lw	a4,-24(s0)
-   107bc:	00100793          	addi	a5,zero,1
-   107c0:	f6e7d4e3          	bge	a5,a4,10728 <hal_read_ciphertext+0x24>
-   107c4:	fec42783          	lw	a5,-20(s0)
-   107c8:	00178793          	addi	a5,a5,1
-   107cc:	fef42623          	sw	a5,-20(s0)
-   107d0:	fec42703          	lw	a4,-20(s0)
-   107d4:	00100793          	addi	a5,zero,1
-   107d8:	f4e7d4e3          	bge	a5,a4,10720 <hal_read_ciphertext+0x1c>
-   107dc:	00000013          	addi	zero,zero,0
-   107e0:	00000013          	addi	zero,zero,0
-   107e4:	02c12083          	lw	ra,44(sp)
-   107e8:	02812403          	lw	s0,40(sp)
-   107ec:	03010113          	addi	sp,sp,48
-   107f0:	00008067          	jalr	zero,0(ra)
+00010710 <hal_read_ciphertext>:
+   10710:	fd010113          	addi	sp,sp,-48
+   10714:	02112623          	sw	ra,44(sp)
+   10718:	02812423          	sw	s0,40(sp)
+   1071c:	03010413          	addi	s0,sp,48
+   10720:	fca42e23          	sw	a0,-36(s0)
+   10724:	fe042623          	sw	zero,-20(s0)
+   10728:	0b40006f          	jal	zero,107dc <hal_read_ciphertext+0xcc>
+   1072c:	fe042423          	sw	zero,-24(s0)
+   10730:	0940006f          	jal	zero,107c4 <hal_read_ciphertext+0xb4>
+   10734:	fe042223          	sw	zero,-28(s0)
+   10738:	0740006f          	jal	zero,107ac <hal_read_ciphertext+0x9c>
+   1073c:	fec42783          	lw	a5,-20(s0)
+   10740:	00179713          	slli	a4,a5,0x1
+   10744:	fe842783          	lw	a5,-24(s0)
+   10748:	00f707b3          	add	a5,a4,a5
+   1074c:	00279713          	slli	a4,a5,0x2
+   10750:	fe442783          	lw	a5,-28(s0)
+   10754:	00f70733          	add	a4,a4,a5
+   10758:	100027b7          	lui	a5,0x10002
+   1075c:	ca078793          	addi	a5,a5,-864 # 10001ca0 <__global_pointer$+0xffef99c>
+   10760:	00f707b3          	add	a5,a4,a5
+   10764:	00279793          	slli	a5,a5,0x2
+   10768:	fef42023          	sw	a5,-32(s0)
+   1076c:	fec42783          	lw	a5,-20(s0)
+   10770:	00579793          	slli	a5,a5,0x5
+   10774:	fdc42703          	lw	a4,-36(s0)
+   10778:	00f706b3          	add	a3,a4,a5
+   1077c:	fe042783          	lw	a5,-32(s0)
+   10780:	0007a703          	lw	a4,0(a5)
+   10784:	fe842783          	lw	a5,-24(s0)
+   10788:	00279613          	slli	a2,a5,0x2
+   1078c:	fe442783          	lw	a5,-28(s0)
+   10790:	00f607b3          	add	a5,a2,a5
+   10794:	00279793          	slli	a5,a5,0x2
+   10798:	00f687b3          	add	a5,a3,a5
+   1079c:	00e7a023          	sw	a4,0(a5)
+   107a0:	fe442783          	lw	a5,-28(s0)
+   107a4:	00178793          	addi	a5,a5,1
+   107a8:	fef42223          	sw	a5,-28(s0)
+   107ac:	fe442703          	lw	a4,-28(s0)
+   107b0:	00300793          	addi	a5,zero,3
+   107b4:	f8e7d4e3          	bge	a5,a4,1073c <hal_read_ciphertext+0x2c>
+   107b8:	fe842783          	lw	a5,-24(s0)
+   107bc:	00178793          	addi	a5,a5,1
+   107c0:	fef42423          	sw	a5,-24(s0)
+   107c4:	fe842703          	lw	a4,-24(s0)
+   107c8:	00100793          	addi	a5,zero,1
+   107cc:	f6e7d4e3          	bge	a5,a4,10734 <hal_read_ciphertext+0x24>
+   107d0:	fec42783          	lw	a5,-20(s0)
+   107d4:	00178793          	addi	a5,a5,1
+   107d8:	fef42623          	sw	a5,-20(s0)
+   107dc:	fec42703          	lw	a4,-20(s0)
+   107e0:	00100793          	addi	a5,zero,1
+   107e4:	f4e7d4e3          	bge	a5,a4,1072c <hal_read_ciphertext+0x1c>
+   107e8:	00000013          	addi	zero,zero,0
+   107ec:	00000013          	addi	zero,zero,0
+   107f0:	02c12083          	lw	ra,44(sp)
+   107f4:	02812403          	lw	s0,40(sp)
+   107f8:	03010113          	addi	sp,sp,48
+   107fc:	00008067          	jalr	zero,0(ra)
 
-000107f4 <hal_trigger_keygen>:
-   107f4:	fd010113          	addi	sp,sp,-48
-   107f8:	02112623          	sw	ra,44(sp)
-   107fc:	02812423          	sw	s0,40(sp)
-   10800:	03010413          	addi	s0,sp,48
-   10804:	fca42e23          	sw	a0,-36(s0)
-   10808:	fdc42783          	lw	a5,-36(s0)
-   1080c:	fef42623          	sw	a5,-20(s0)
-   10810:	fec42783          	lw	a5,-20(s0)
-   10814:	00100713          	addi	a4,zero,1
-   10818:	00e7a023          	sw	a4,0(a5)
-   1081c:	00000013          	addi	zero,zero,0
-   10820:	02c12083          	lw	ra,44(sp)
-   10824:	02812403          	lw	s0,40(sp)
-   10828:	03010113          	addi	sp,sp,48
-   1082c:	00008067          	jalr	zero,0(ra)
+00010800 <hal_trigger_keygen>:
+   10800:	fd010113          	addi	sp,sp,-48
+   10804:	02112623          	sw	ra,44(sp)
+   10808:	02812423          	sw	s0,40(sp)
+   1080c:	03010413          	addi	s0,sp,48
+   10810:	fca42e23          	sw	a0,-36(s0)
+   10814:	fdc42783          	lw	a5,-36(s0)
+   10818:	fef42623          	sw	a5,-20(s0)
+   1081c:	fec42783          	lw	a5,-20(s0)
+   10820:	00100713          	addi	a4,zero,1
+   10824:	00e7a023          	sw	a4,0(a5)
+   10828:	00000013          	addi	zero,zero,0
+   1082c:	02c12083          	lw	ra,44(sp)
+   10830:	02812403          	lw	s0,40(sp)
+   10834:	03010113          	addi	sp,sp,48
+   10838:	00008067          	jalr	zero,0(ra)
 
-00010830 <hal_trigger_encrypt>:
-   10830:	fd010113          	addi	sp,sp,-48
-   10834:	02112623          	sw	ra,44(sp)
-   10838:	02812423          	sw	s0,40(sp)
-   1083c:	03010413          	addi	s0,sp,48
-   10840:	fca42e23          	sw	a0,-36(s0)
-   10844:	fdc42783          	lw	a5,-36(s0)
-   10848:	fef42623          	sw	a5,-20(s0)
-   1084c:	fec42783          	lw	a5,-20(s0)
-   10850:	00100713          	addi	a4,zero,1
-   10854:	00e7a023          	sw	a4,0(a5)
-   10858:	00000013          	addi	zero,zero,0
-   1085c:	02c12083          	lw	ra,44(sp)
-   10860:	02812403          	lw	s0,40(sp)
-   10864:	03010113          	addi	sp,sp,48
-   10868:	00008067          	jalr	zero,0(ra)
+0001083c <hal_trigger_encrypt>:
+   1083c:	fd010113          	addi	sp,sp,-48
+   10840:	02112623          	sw	ra,44(sp)
+   10844:	02812423          	sw	s0,40(sp)
+   10848:	03010413          	addi	s0,sp,48
+   1084c:	fca42e23          	sw	a0,-36(s0)
+   10850:	fdc42783          	lw	a5,-36(s0)
+   10854:	fef42623          	sw	a5,-20(s0)
+   10858:	fec42783          	lw	a5,-20(s0)
+   1085c:	00100713          	addi	a4,zero,1
+   10860:	00e7a023          	sw	a4,0(a5)
+   10864:	00000013          	addi	zero,zero,0
+   10868:	02c12083          	lw	ra,44(sp)
+   1086c:	02812403          	lw	s0,40(sp)
+   10870:	03010113          	addi	sp,sp,48
+   10874:	00008067          	jalr	zero,0(ra)
 
-0001086c <hal_trigger_decrypt>:
-   1086c:	fd010113          	addi	sp,sp,-48
-   10870:	02112623          	sw	ra,44(sp)
-   10874:	02812423          	sw	s0,40(sp)
-   10878:	03010413          	addi	s0,sp,48
-   1087c:	fca42e23          	sw	a0,-36(s0)
-   10880:	fdc42783          	lw	a5,-36(s0)
-   10884:	fef42623          	sw	a5,-20(s0)
-   10888:	fec42783          	lw	a5,-20(s0)
-   1088c:	00100713          	addi	a4,zero,1
-   10890:	00e7a023          	sw	a4,0(a5)
-   10894:	00000013          	addi	zero,zero,0
-   10898:	02c12083          	lw	ra,44(sp)
-   1089c:	02812403          	lw	s0,40(sp)
-   108a0:	03010113          	addi	sp,sp,48
-   108a4:	00008067          	jalr	zero,0(ra)
+00010878 <hal_trigger_decrypt>:
+   10878:	fd010113          	addi	sp,sp,-48
+   1087c:	02112623          	sw	ra,44(sp)
+   10880:	02812423          	sw	s0,40(sp)
+   10884:	03010413          	addi	s0,sp,48
+   10888:	fca42e23          	sw	a0,-36(s0)
+   1088c:	fdc42783          	lw	a5,-36(s0)
+   10890:	fef42623          	sw	a5,-20(s0)
+   10894:	fec42783          	lw	a5,-20(s0)
+   10898:	00100713          	addi	a4,zero,1
+   1089c:	00e7a023          	sw	a4,0(a5)
+   108a0:	00000013          	addi	zero,zero,0
+   108a4:	02c12083          	lw	ra,44(sp)
+   108a8:	02812403          	lw	s0,40(sp)
+   108ac:	03010113          	addi	sp,sp,48
+   108b0:	00008067          	jalr	zero,0(ra)
 
-000108a8 <hal_read_public_key>:
-   108a8:	fd010113          	addi	sp,sp,-48
-   108ac:	02112623          	sw	ra,44(sp)
-   108b0:	02812423          	sw	s0,40(sp)
-   108b4:	03010413          	addi	s0,sp,48
-   108b8:	fca42e23          	sw	a0,-36(s0)
-   108bc:	fe042623          	sw	zero,-20(s0)
-   108c0:	0b40006f          	jal	zero,10974 <hal_read_public_key+0xcc>
-   108c4:	fe042423          	sw	zero,-24(s0)
-   108c8:	0940006f          	jal	zero,1095c <hal_read_public_key+0xb4>
-   108cc:	fe042223          	sw	zero,-28(s0)
-   108d0:	0740006f          	jal	zero,10944 <hal_read_public_key+0x9c>
-   108d4:	fec42783          	lw	a5,-20(s0)
-   108d8:	00279713          	slli	a4,a5,0x2
-   108dc:	fe842783          	lw	a5,-24(s0)
-   108e0:	00f707b3          	add	a5,a4,a5
+000108b4 <hal_read_public_key>:
+   108b4:	fd010113          	addi	sp,sp,-48
+   108b8:	02112623          	sw	ra,44(sp)
+   108bc:	02812423          	sw	s0,40(sp)
+   108c0:	03010413          	addi	s0,sp,48
+   108c4:	fca42e23          	sw	a0,-36(s0)
+   108c8:	fe042623          	sw	zero,-20(s0)
+   108cc:	0b40006f          	jal	zero,10980 <hal_read_public_key+0xcc>
+   108d0:	fe042423          	sw	zero,-24(s0)
+   108d4:	0940006f          	jal	zero,10968 <hal_read_public_key+0xb4>
+   108d8:	fe042223          	sw	zero,-28(s0)
+   108dc:	0740006f          	jal	zero,10950 <hal_read_public_key+0x9c>
+   108e0:	fec42783          	lw	a5,-20(s0)
    108e4:	00279713          	slli	a4,a5,0x2
-   108e8:	fe442783          	lw	a5,-28(s0)
-   108ec:	00f70733          	add	a4,a4,a5
-   108f0:	100027b7          	lui	a5,0x10002
-   108f4:	c8078793          	addi	a5,a5,-896 # 10001c80 <__global_pointer$+0xffef988>
-   108f8:	00f707b3          	add	a5,a4,a5
-   108fc:	00279793          	slli	a5,a5,0x2
-   10900:	fef42023          	sw	a5,-32(s0)
-   10904:	fec42783          	lw	a5,-20(s0)
-   10908:	00679793          	slli	a5,a5,0x6
-   1090c:	fdc42703          	lw	a4,-36(s0)
-   10910:	00f706b3          	add	a3,a4,a5
-   10914:	fe042783          	lw	a5,-32(s0)
-   10918:	0007a703          	lw	a4,0(a5)
-   1091c:	fe842783          	lw	a5,-24(s0)
-   10920:	00279613          	slli	a2,a5,0x2
-   10924:	fe442783          	lw	a5,-28(s0)
-   10928:	00f607b3          	add	a5,a2,a5
-   1092c:	00279793          	slli	a5,a5,0x2
-   10930:	00f687b3          	add	a5,a3,a5
-   10934:	00e7a023          	sw	a4,0(a5)
-   10938:	fe442783          	lw	a5,-28(s0)
-   1093c:	00178793          	addi	a5,a5,1
-   10940:	fef42223          	sw	a5,-28(s0)
-   10944:	fe442703          	lw	a4,-28(s0)
-   10948:	00300793          	addi	a5,zero,3
-   1094c:	f8e7d4e3          	bge	a5,a4,108d4 <hal_read_public_key+0x2c>
-   10950:	fe842783          	lw	a5,-24(s0)
-   10954:	00178793          	addi	a5,a5,1
-   10958:	fef42423          	sw	a5,-24(s0)
-   1095c:	fe842703          	lw	a4,-24(s0)
-   10960:	00300793          	addi	a5,zero,3
-   10964:	f6e7d4e3          	bge	a5,a4,108cc <hal_read_public_key+0x24>
-   10968:	fec42783          	lw	a5,-20(s0)
-   1096c:	00178793          	addi	a5,a5,1
-   10970:	fef42623          	sw	a5,-20(s0)
-   10974:	fec42703          	lw	a4,-20(s0)
-   10978:	00100793          	addi	a5,zero,1
-   1097c:	f4e7d4e3          	bge	a5,a4,108c4 <hal_read_public_key+0x1c>
-   10980:	00000013          	addi	zero,zero,0
-   10984:	00000013          	addi	zero,zero,0
-   10988:	02c12083          	lw	ra,44(sp)
-   1098c:	02812403          	lw	s0,40(sp)
-   10990:	03010113          	addi	sp,sp,48
-   10994:	00008067          	jalr	zero,0(ra)
+   108e8:	fe842783          	lw	a5,-24(s0)
+   108ec:	00f707b3          	add	a5,a4,a5
+   108f0:	00279713          	slli	a4,a5,0x2
+   108f4:	fe442783          	lw	a5,-28(s0)
+   108f8:	00f70733          	add	a4,a4,a5
+   108fc:	100027b7          	lui	a5,0x10002
+   10900:	c8078793          	addi	a5,a5,-896 # 10001c80 <__global_pointer$+0xffef97c>
+   10904:	00f707b3          	add	a5,a4,a5
+   10908:	00279793          	slli	a5,a5,0x2
+   1090c:	fef42023          	sw	a5,-32(s0)
+   10910:	fec42783          	lw	a5,-20(s0)
+   10914:	00679793          	slli	a5,a5,0x6
+   10918:	fdc42703          	lw	a4,-36(s0)
+   1091c:	00f706b3          	add	a3,a4,a5
+   10920:	fe042783          	lw	a5,-32(s0)
+   10924:	0007a703          	lw	a4,0(a5)
+   10928:	fe842783          	lw	a5,-24(s0)
+   1092c:	00279613          	slli	a2,a5,0x2
+   10930:	fe442783          	lw	a5,-28(s0)
+   10934:	00f607b3          	add	a5,a2,a5
+   10938:	00279793          	slli	a5,a5,0x2
+   1093c:	00f687b3          	add	a5,a3,a5
+   10940:	00e7a023          	sw	a4,0(a5)
+   10944:	fe442783          	lw	a5,-28(s0)
+   10948:	00178793          	addi	a5,a5,1
+   1094c:	fef42223          	sw	a5,-28(s0)
+   10950:	fe442703          	lw	a4,-28(s0)
+   10954:	00300793          	addi	a5,zero,3
+   10958:	f8e7d4e3          	bge	a5,a4,108e0 <hal_read_public_key+0x2c>
+   1095c:	fe842783          	lw	a5,-24(s0)
+   10960:	00178793          	addi	a5,a5,1
+   10964:	fef42423          	sw	a5,-24(s0)
+   10968:	fe842703          	lw	a4,-24(s0)
+   1096c:	00300793          	addi	a5,zero,3
+   10970:	f6e7d4e3          	bge	a5,a4,108d8 <hal_read_public_key+0x24>
+   10974:	fec42783          	lw	a5,-20(s0)
+   10978:	00178793          	addi	a5,a5,1
+   1097c:	fef42623          	sw	a5,-20(s0)
+   10980:	fec42703          	lw	a4,-20(s0)
+   10984:	00100793          	addi	a5,zero,1
+   10988:	f4e7d4e3          	bge	a5,a4,108d0 <hal_read_public_key+0x1c>
+   1098c:	00000013          	addi	zero,zero,0
+   10990:	00000013          	addi	zero,zero,0
+   10994:	02c12083          	lw	ra,44(sp)
+   10998:	02812403          	lw	s0,40(sp)
+   1099c:	03010113          	addi	sp,sp,48
+   109a0:	00008067          	jalr	zero,0(ra)
 
-00010998 <hal_read_secret_key>:
-   10998:	fd010113          	addi	sp,sp,-48
-   1099c:	02112623          	sw	ra,44(sp)
-   109a0:	02812423          	sw	s0,40(sp)
-   109a4:	03010413          	addi	s0,sp,48
-   109a8:	fca42e23          	sw	a0,-36(s0)
-   109ac:	fe042623          	sw	zero,-20(s0)
-   109b0:	07c0006f          	jal	zero,10a2c <hal_read_secret_key+0x94>
-   109b4:	fe042423          	sw	zero,-24(s0)
-   109b8:	05c0006f          	jal	zero,10a14 <hal_read_secret_key+0x7c>
-   109bc:	fec42783          	lw	a5,-20(s0)
-   109c0:	00279713          	slli	a4,a5,0x2
-   109c4:	fe842783          	lw	a5,-24(s0)
-   109c8:	00f70733          	add	a4,a4,a5
-   109cc:	100027b7          	lui	a5,0x10002
-   109d0:	cb378793          	addi	a5,a5,-845 # 10001cb3 <__global_pointer$+0xffef9bb>
-   109d4:	00f707b3          	add	a5,a4,a5
-   109d8:	00279793          	slli	a5,a5,0x2
-   109dc:	fef42223          	sw	a5,-28(s0)
-   109e0:	fec42783          	lw	a5,-20(s0)
-   109e4:	00479793          	slli	a5,a5,0x4
-   109e8:	fdc42703          	lw	a4,-36(s0)
-   109ec:	00f706b3          	add	a3,a4,a5
-   109f0:	fe442783          	lw	a5,-28(s0)
-   109f4:	0007a703          	lw	a4,0(a5)
-   109f8:	fe842783          	lw	a5,-24(s0)
-   109fc:	00279793          	slli	a5,a5,0x2
-   10a00:	00f687b3          	add	a5,a3,a5
-   10a04:	00e7a023          	sw	a4,0(a5)
-   10a08:	fe842783          	lw	a5,-24(s0)
-   10a0c:	00178793          	addi	a5,a5,1
-   10a10:	fef42423          	sw	a5,-24(s0)
-   10a14:	fe842703          	lw	a4,-24(s0)
-   10a18:	00300793          	addi	a5,zero,3
-   10a1c:	fae7d0e3          	bge	a5,a4,109bc <hal_read_secret_key+0x24>
-   10a20:	fec42783          	lw	a5,-20(s0)
-   10a24:	00178793          	addi	a5,a5,1
-   10a28:	fef42623          	sw	a5,-20(s0)
-   10a2c:	fec42703          	lw	a4,-20(s0)
-   10a30:	00100793          	addi	a5,zero,1
-   10a34:	f8e7d0e3          	bge	a5,a4,109b4 <hal_read_secret_key+0x1c>
-   10a38:	00000013          	addi	zero,zero,0
-   10a3c:	00000013          	addi	zero,zero,0
-   10a40:	02c12083          	lw	ra,44(sp)
-   10a44:	02812403          	lw	s0,40(sp)
-   10a48:	03010113          	addi	sp,sp,48
-   10a4c:	00008067          	jalr	zero,0(ra)
+000109a4 <hal_read_secret_key>:
+   109a4:	fd010113          	addi	sp,sp,-48
+   109a8:	02112623          	sw	ra,44(sp)
+   109ac:	02812423          	sw	s0,40(sp)
+   109b0:	03010413          	addi	s0,sp,48
+   109b4:	fca42e23          	sw	a0,-36(s0)
+   109b8:	fe042623          	sw	zero,-20(s0)
+   109bc:	07c0006f          	jal	zero,10a38 <hal_read_secret_key+0x94>
+   109c0:	fe042423          	sw	zero,-24(s0)
+   109c4:	05c0006f          	jal	zero,10a20 <hal_read_secret_key+0x7c>
+   109c8:	fec42783          	lw	a5,-20(s0)
+   109cc:	00279713          	slli	a4,a5,0x2
+   109d0:	fe842783          	lw	a5,-24(s0)
+   109d4:	00f70733          	add	a4,a4,a5
+   109d8:	100027b7          	lui	a5,0x10002
+   109dc:	cb378793          	addi	a5,a5,-845 # 10001cb3 <__global_pointer$+0xffef9af>
+   109e0:	00f707b3          	add	a5,a4,a5
+   109e4:	00279793          	slli	a5,a5,0x2
+   109e8:	fef42223          	sw	a5,-28(s0)
+   109ec:	fec42783          	lw	a5,-20(s0)
+   109f0:	00479793          	slli	a5,a5,0x4
+   109f4:	fdc42703          	lw	a4,-36(s0)
+   109f8:	00f706b3          	add	a3,a4,a5
+   109fc:	fe442783          	lw	a5,-28(s0)
+   10a00:	0007a703          	lw	a4,0(a5)
+   10a04:	fe842783          	lw	a5,-24(s0)
+   10a08:	00279793          	slli	a5,a5,0x2
+   10a0c:	00f687b3          	add	a5,a3,a5
+   10a10:	00e7a023          	sw	a4,0(a5)
+   10a14:	fe842783          	lw	a5,-24(s0)
+   10a18:	00178793          	addi	a5,a5,1
+   10a1c:	fef42423          	sw	a5,-24(s0)
+   10a20:	fe842703          	lw	a4,-24(s0)
+   10a24:	00300793          	addi	a5,zero,3
+   10a28:	fae7d0e3          	bge	a5,a4,109c8 <hal_read_secret_key+0x24>
+   10a2c:	fec42783          	lw	a5,-20(s0)
+   10a30:	00178793          	addi	a5,a5,1
+   10a34:	fef42623          	sw	a5,-20(s0)
+   10a38:	fec42703          	lw	a4,-20(s0)
+   10a3c:	00100793          	addi	a5,zero,1
+   10a40:	f8e7d0e3          	bge	a5,a4,109c0 <hal_read_secret_key+0x1c>
+   10a44:	00000013          	addi	zero,zero,0
+   10a48:	00000013          	addi	zero,zero,0
+   10a4c:	02c12083          	lw	ra,44(sp)
+   10a50:	02812403          	lw	s0,40(sp)
+   10a54:	03010113          	addi	sp,sp,48
+   10a58:	00008067          	jalr	zero,0(ra)
 
-00010a50 <hal_read_decrypted_message>:
-   10a50:	fe010113          	addi	sp,sp,-32
-   10a54:	00112e23          	sw	ra,28(sp)
-   10a58:	00812c23          	sw	s0,24(sp)
-   10a5c:	02010413          	addi	s0,sp,32
-   10a60:	400077b7          	lui	a5,0x40007
-   10a64:	2c078793          	addi	a5,a5,704 # 400072c0 <__global_pointer$+0x3fff4fc8>
-   10a68:	fef42623          	sw	a5,-20(s0)
-   10a6c:	fec42783          	lw	a5,-20(s0)
-   10a70:	0007a783          	lw	a5,0(a5)
-   10a74:	00078513          	addi	a0,a5,0
-   10a78:	01c12083          	lw	ra,28(sp)
-   10a7c:	01812403          	lw	s0,24(sp)
-   10a80:	02010113          	addi	sp,sp,32
-   10a84:	00008067          	jalr	zero,0(ra)
+00010a5c <hal_read_decrypted_message>:
+   10a5c:	fe010113          	addi	sp,sp,-32
+   10a60:	00112e23          	sw	ra,28(sp)
+   10a64:	00812c23          	sw	s0,24(sp)
+   10a68:	02010413          	addi	s0,sp,32
+   10a6c:	400077b7          	lui	a5,0x40007
+   10a70:	2c078793          	addi	a5,a5,704 # 400072c0 <__global_pointer$+0x3fff4fbc>
+   10a74:	fef42623          	sw	a5,-20(s0)
+   10a78:	fec42783          	lw	a5,-20(s0)
+   10a7c:	0007a783          	lw	a5,0(a5)
+   10a80:	00078513          	addi	a0,a5,0
+   10a84:	01c12083          	lw	ra,28(sp)
+   10a88:	01812403          	lw	s0,24(sp)
+   10a8c:	02010113          	addi	sp,sp,32
+   10a90:	00008067          	jalr	zero,0(ra)
 
-00010a88 <hal_read_decrypted_value>:
-   10a88:	fe010113          	addi	sp,sp,-32
-   10a8c:	00112e23          	sw	ra,28(sp)
-   10a90:	00812c23          	sw	s0,24(sp)
-   10a94:	02010413          	addi	s0,sp,32
-   10a98:	400077b7          	lui	a5,0x40007
-   10a9c:	2c478793          	addi	a5,a5,708 # 400072c4 <__global_pointer$+0x3fff4fcc>
-   10aa0:	fef42623          	sw	a5,-20(s0)
-   10aa4:	fec42783          	lw	a5,-20(s0)
-   10aa8:	0007a783          	lw	a5,0(a5)
-   10aac:	00078513          	addi	a0,a5,0
-   10ab0:	01c12083          	lw	ra,28(sp)
-   10ab4:	01812403          	lw	s0,24(sp)
-   10ab8:	02010113          	addi	sp,sp,32
-   10abc:	00008067          	jalr	zero,0(ra)
+00010a94 <hal_read_decrypted_value>:
+   10a94:	fe010113          	addi	sp,sp,-32
+   10a98:	00112e23          	sw	ra,28(sp)
+   10a9c:	00812c23          	sw	s0,24(sp)
+   10aa0:	02010413          	addi	s0,sp,32
+   10aa4:	400077b7          	lui	a5,0x40007
+   10aa8:	2c478793          	addi	a5,a5,708 # 400072c4 <__global_pointer$+0x3fff4fc0>
+   10aac:	fef42623          	sw	a5,-20(s0)
+   10ab0:	fec42783          	lw	a5,-20(s0)
+   10ab4:	0007a783          	lw	a5,0(a5)
+   10ab8:	00078513          	addi	a0,a5,0
+   10abc:	01c12083          	lw	ra,28(sp)
+   10ac0:	01812403          	lw	s0,24(sp)
+   10ac4:	02010113          	addi	sp,sp,32
+   10ac8:	00008067          	jalr	zero,0(ra)
 
-00010ac0 <hal_read_decrypted_mb>:
-   10ac0:	fe010113          	addi	sp,sp,-32
-   10ac4:	00112e23          	sw	ra,28(sp)
-   10ac8:	00812c23          	sw	s0,24(sp)
-   10acc:	02010413          	addi	s0,sp,32
-   10ad0:	400077b7          	lui	a5,0x40007
-   10ad4:	2c878793          	addi	a5,a5,712 # 400072c8 <__global_pointer$+0x3fff4fd0>
-   10ad8:	fef42623          	sw	a5,-20(s0)
-   10adc:	fec42783          	lw	a5,-20(s0)
-   10ae0:	0007a783          	lw	a5,0(a5)
-   10ae4:	00078513          	addi	a0,a5,0
-   10ae8:	01c12083          	lw	ra,28(sp)
-   10aec:	01812403          	lw	s0,24(sp)
-   10af0:	02010113          	addi	sp,sp,32
-   10af4:	00008067          	jalr	zero,0(ra)
+00010acc <hal_read_decrypted_mb>:
+   10acc:	fe010113          	addi	sp,sp,-32
+   10ad0:	00112e23          	sw	ra,28(sp)
+   10ad4:	00812c23          	sw	s0,24(sp)
+   10ad8:	02010413          	addi	s0,sp,32
+   10adc:	400077b7          	lui	a5,0x40007
+   10ae0:	2c878793          	addi	a5,a5,712 # 400072c8 <__global_pointer$+0x3fff4fc4>
+   10ae4:	fef42623          	sw	a5,-20(s0)
+   10ae8:	fec42783          	lw	a5,-20(s0)
+   10aec:	0007a783          	lw	a5,0(a5)
+   10af0:	00078513          	addi	a0,a5,0
+   10af4:	01c12083          	lw	ra,28(sp)
+   10af8:	01812403          	lw	s0,24(sp)
+   10afc:	02010113          	addi	sp,sp,32
+   10b00:	00008067          	jalr	zero,0(ra)
