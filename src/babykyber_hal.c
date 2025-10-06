@@ -2,7 +2,7 @@
 #include "babykyber_regs.h"
 #include <stdint.h>
 
-// Send A matrix (4x4 = 16 words)
+// Send A matrix (4x4)
 void hal_send_A(uint32_t A[4][4]) {
     volatile uint32_t *ptr;
     for (int i = 0; i < 4; i++) {
@@ -13,7 +13,7 @@ void hal_send_A(uint32_t A[4][4]) {
     }
 }
 
-// Send s (2x4 = 8 words)
+// Send s (2x4)
 void hal_send_s(uint32_t s[2][4]) {
     volatile uint32_t *ptr;
     for (int i = 0; i < 2; i++) {
@@ -24,7 +24,7 @@ void hal_send_s(uint32_t s[2][4]) {
     }
 }
 
-// Send e (2x4 = 8 words)
+// Send e (2x4)
 void hal_send_e(uint32_t e[2][4]) {
     volatile uint32_t *ptr;
     for (int i = 0; i < 2; i++) {
@@ -41,7 +41,7 @@ void hal_send_message(uint32_t message) {
     *ptr = message;
 }
 
-// Send r (2x4 = 8 words)
+// Send r (2x4)
 void hal_send_r(uint32_t r[2][4]) {
     volatile uint32_t *ptr;
     for (int i = 0; i < 2; i++) {
@@ -52,7 +52,7 @@ void hal_send_r(uint32_t r[2][4]) {
     }
 }
 
-// Send e1 (2x4 = 8 words)
+// Send e1 (2x4)
 void hal_send_e1(uint32_t e1[2][4]) {
     volatile uint32_t *ptr;
     for (int i = 0; i < 2; i++) {
@@ -73,7 +73,7 @@ void hal_send_e2(uint32_t e2[4]) {
 }
 
 // Read ciphertext (2x2x4 = 16 words)
-void hal_read_ciphertext(uint32_t ciphertext[2][2][4]) {
+void hal_read_ciphertext(volatile uint32_t ciphertext[2][2][4]) {
     volatile uint32_t *ptr;
     for (int k = 0; k < 2; k++) {
         for (int i = 0; i < 2; i++) {
@@ -85,26 +85,24 @@ void hal_read_ciphertext(uint32_t ciphertext[2][2][4]) {
     }
 }
 
-// Trigger key generation
+// Triggers: simple MMIO write of 1
 void hal_trigger_keygen(uint32_t trigger_addr) {
     volatile uint32_t *ptr = (volatile uint32_t *)trigger_addr;
     *ptr = 1;
 }
 
-// Trigger encryption
 void hal_trigger_encrypt(uint32_t trigger_addr) {
     volatile uint32_t *ptr = (volatile uint32_t *)trigger_addr;
     *ptr = 1;
 }
 
-// Trigger decryption
 void hal_trigger_decrypt(uint32_t trigger_addr) {
     volatile uint32_t *ptr = (volatile uint32_t *)trigger_addr;
     *ptr = 1;
 }
 
 // Read public key (2x4x4 = 32 words)
-void hal_read_public_key(uint32_t public_key[2][4][4]) {
+void hal_read_public_key(volatile uint32_t public_key[2][4][4]) {
     volatile uint32_t *ptr;
     for (int k = 0; k < 2; k++) {
         for (int i = 0; i < 4; i++) {
@@ -117,7 +115,7 @@ void hal_read_public_key(uint32_t public_key[2][4][4]) {
 }
 
 // Read secret key (2x4 = 8 words)
-void hal_read_secret_key(uint32_t secret_key[2][4]) {
+void hal_read_secret_key(volatile uint32_t secret_key[2][4]) {
     volatile uint32_t *ptr;
     for (int i = 0; i < 2; i++) {
         for (int j = 0; j < 4; j++) {

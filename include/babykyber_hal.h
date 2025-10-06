@@ -36,13 +36,13 @@ void hal_trigger_encrypt(uint32_t trigger_addr);
 void hal_trigger_decrypt(uint32_t trigger_addr);
 
 // Read public key (2x4x4 = 32 words)
-void hal_read_public_key(uint32_t public_key[2][4][4]);
+void hal_read_public_key(volatile uint32_t public_key[2][4][4]);
 
 // Read secret key (2x4 = 8 words)
-void hal_read_secret_key(uint32_t secret_key[2][4]);
+void hal_read_secret_key(volatile uint32_t secret_key[2][4]);
 
 // Read ciphertext (2x2x4 = 16 words)
-void hal_read_ciphertext(uint32_t ciphertext[2][2][4]);
+void hal_read_ciphertext(volatile uint32_t ciphertext[2][2][4]);
 
 // Read decrypted message
 uint32_t hal_read_decrypted_message();

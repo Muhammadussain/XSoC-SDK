@@ -72,7 +72,7 @@ uint32_t e[2][4] = {
     {0,1,16,0},
     {1,16,0,1}
 };
-babykyber_keygen(A, s, e, BABYKYBER_KEYGEN_TRIGGER_ADDR);
+babykyber_keygen(A, s, e);
 
 // Encryption
 uint32_t message = 42;
@@ -85,15 +85,27 @@ uint32_t e1[2][4] = {
     {16,0,1,16}
 };
 uint32_t e2[4] = {0,16,1,0};
-babykyber_encrypt(message, r, e1, e2, BABYKYBER_ENCRYPT_TRIGGER_ADDR);
+babykyber_encrypt(message, r, e1, e2);
 
 // Decryption
 uint32_t public_key[2][4][4];
 uint32_t secret_key[2][4];
 uint32_t ciphertext[2][2][4];
 uint32_t decrypted_message, decrypted_value, m_b;
-babykyber_decrypt(BABYKYBER_DECRYPT_TRIGGER_ADDR, public_key, secret_key, ciphertext,
+babykyber_decrypt(public_key, secret_key, ciphertext,
                   &decrypted_message, &decrypted_value, &m_b);
+
+Usage note
+----------
+The library now handles trigger writes internally. Callers only need to
+provide the data inputs (A, s, e for keygen; message, r, e1, e2 for
+encryption). The library will write the data registers and then perform
+the single-word trigger write itself, so you do not need to pass any
+trigger register addresses to the API.
+
+If you have a non-standard register mapping and need to override the
+trigger addresses, we can add a small setter API (e.g. to set custom
+addresses) — tell me if you want that.
 ```
 
 ## Hardware Interface
